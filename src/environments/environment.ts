@@ -10,6 +10,7 @@ export const environment = {
   production: false,
   version: env.npm_package_version + '-dev',
   serverUrl: '/api',
+  znodeApiUrl: 'http://perf.api.amlamarket.com',
   defaultLanguage: 'en-US',
   supportedLanguages: [
     'en-US',
