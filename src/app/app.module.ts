@@ -13,6 +13,7 @@ import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
 import { CategoriesModule } from './categories/categories.module';
 import { LoginModule } from './login/login.module';
+import { PlpModule } from './plp/plp.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -30,6 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     AboutModule,
     CategoriesModule,
     LoginModule,
+    PlpModule,
     AppRoutingModule
   ],
   declarations: [AppComponent],

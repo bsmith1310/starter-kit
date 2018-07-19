@@ -1,0 +1,1512 @@
+<link href="http://localhost:44762/Data/Media/022ccd41-e2a4-47ef-8e7a-9b82704fd7aamaxwell.ico" rel="shortcut icon"
+      type="image/x-icon" onerror="this.onerror = null; this.src = 'favicon.ico'">
+<meta name="description" content="Nuts"/>
+<meta name="keywords" content="Nuts">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link href="http://localhost:3288/Views/Themes/Default/Content/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"
+      async/>
+<link href="http://localhost:3288/Views/Themes/Default/Content/css/site.min.css" rel="stylesheet" async/>
+
+<script src="http://localhost:3288/Views/Themes/Default/Content/bootstrap-3.3.7/js/bootstrap.min.js" async></script>
+<script src="http://localhost:3288/Views/Themes/Default/Scripts/lib/event.min.js" async></script>
+
+<div id="Category" class="Index" data-controller="Category" data-view="Index"
+     onload="javascript: var notification = new ZnodeNotification(); notification.DisplayNotificationMessages();">
+
+  <div id="layout" class="wrapper">
+
+    <!--Header Widgets-->
+    <header>
+      <div class="container-fluid header">
+        <div class="row">
+
+          <div class="container-fluid">
+            <div class="row header-local-container">
+              <div class="container">
+                <div class="row">
+                  <!--Locales Widget-->
+
+                  <form action="/Home/ChangeLocale" method="post"><input name="__RequestVerificationToken" type="hidden"
+                                                                         value="yBfotSZUfaS81bdYAZhMl8gUCULxpRq4QjdtYXQObNR5QCFz8TDJG5Ttjp6cPNFLMkpi5ghANDeJyLu3ZjUrtOHXuVUhJBID-3GWUD6jo2g1"/>
+                    <div class="local-widget">
+                      <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                          <span class="flag us"></span>English<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li>
+                            <h5>Select Locale</h5>
+                            <div>
+                              <ul>
+                                <li><a href='/Home/ChangeLocale?LocaleId=1'>English</a></li>
+                                <li><a href='/Home/ChangeLocale?LocaleId=4'>Spanish</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </form>
+
+
+                  <div class="pull-right track-order">
+                    <a href="http://localhost:3288/User/GetOrderDetails">Track Order</a>
+                  </div>
+                  <span
+                    class="label-environment pull-right padding-right-15 label-current-environment-DEV">Mode: DEV</span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-5 col-md-3 nopadding">
+                <a href="http://localhost:3288/" class="header-logo">
+                  <img src="http://localhost:44762/Data/Media/980c3e7d-79cf-4516-97ff-6a3fb9509a71logo-desktop.png"
+                       alt="Maxwell&#39;s Fine Food" class="img-responsive b-lazy"/>
+
+                </a>
+              </div>
+              <div class="header-link-contain nopadding">
+                <div class="col-xs-12 col-sm-7 col-sm-offset-2 col-md-offset-1 col-md-4 nopadding">
+                  <!--Search Widget-->
+                  <div class="search-widget">
+                    <form action="/Search" method="GET">
+                      <div class="left-inner-icon input-group">
+                        <i class="zf-search"></i>
+                        <input Name="SearchTerm" class="typeahead" data-autocomplete-id-field="Id"
+                               data-autocomplete-url="/Search/GetSuggestions"
+                               data-onselect-function="Product.prototype.GetSuggestionResult"
+                               data_autocomplete_url="/Search/GetSuggestions"
+                               data_onselect_function="Product.prototype.GetSuggestionResult" id="searchTextBox"
+                               name="Name" placeholder="Search..." type="text" value=""/>
+                        <span class="input-group-btn">
+                <button type="submit" class="btn-text btn-bg-primary" id="btnSearchTerm">Go</button>
+            </span>
+                      </div>
+                      <div id="typeahead-results" class="ui-autocomplete-home"></div>
+                    </form>
+                  </div>
+
+                  <script>
+                    $(document).ready(function () {
+                      Search.prototype.ValidateSearch();
+                    });
+                  </script>
+
+
+                </div>
+                <div class="col-xs-12 col-sm-9 col-md-5 header-link nopadding pull-right">
+                  <ul>
+                    <li><span class="loginStatus"></span></li>
+                    <li class="quick-order-li">
+                      <!--Quick Order Widget-->
+                      <div class="quick-order-container quickordercontainer">
+                        <i class="f-size zf-quick-order order-link"></i><a data-hover="dropdown"
+                                                                           class="quickOrder dropdown-toggle">Quick
+                        Order</a>
+                        <form id="addtocart-form" method="post" action="/Product/AddToCartProduct">
+                          <input name="__RequestVerificationToken" type="hidden"
+                                 value="TM4Scxj_DH-M8-KSV2ksoBVUMFF8C4b-sg97p2gXL0ldWT073Yucuf3ZZdj2uVagkyfkzcE-IbOXMmJhTuWjt2lN5bI-a-HjIg5RbdAp3Y41"/>
+                          <input type="hidden" id="hdnQuickOrderProductId" name="ProductId"/>
+                          <input type="hidden" id="hdnQuickOrderProductName" name="ProductName"/>
+                          <input type="hidden" id="hdnQuickOrderSku" name="SKU"/>
+                          <input type="hidden" id="hdnInvetoryCode" name="InventoryCode"/>
+                          <input type="hidden" id="hdnQuickOrderProductType" name="ProductType"/>
+                          <input type="hidden" id="hdnQuickOrderCartQuantity" name="CartQuantity"/>
+                          <input type="hidden" id="hdnQuickOrderQuantityOnHand" name="QuantityOnHand"/>
+                          <input type="hidden" id="hdnQuickOrderInStockMessage" name="InStockMessage"/>
+                          <input type="hidden" id="hdnQuickOrderOutOfStockMessage" name="OutOfStockMessage"/>
+                          <input type="hidden" id="hdnQuickOrderInventoryMessage" name="InventoryMessage"/>
+                          <input type="hidden" id="hdnQuickOrderInventoryTracking" name="TrackInventory"/>
+                          <input type="hidden" id="hdnQuickOrderMinQty" name="MinQty"/>
+                          <input type="hidden" id="hdnQuickOrderMaxQty" name="MinQty"/>
+                          <input type="hidden" id="hdnQuickOrderCallForPricing" name="CallForPricing"/>
+                          <input type="hidden" id="hdnRetailPrice" name="RetailPrice"/>
+                          <input type="hidden" id="hdnIsPersonisable" name="IsPersonisable"/>
+                          <input type="hidden" id="hdnConfigurableProductSKUs" name="ConfigurableProductSKUs"/>
+                          <input type="hidden" id="hdnGroupProductSKUs" name="GroupProductSKUs"/>
+                          <input type="hidden" id="hdnGroupProductsQuantity" name="GroupProductsQuantity"/>
+                          <input type="hidden" id="hdnAutoAddonSKUs" name="AutoAddonSKUs"/>
+
+                          <div class="dropdown-menu quick-order divQuickOrder">
+                            <div class="close-quick-order-popup close"><i class="zf-close"></i></div>
+                            <div class="col-xs-12">
+                              <div class="col-xs-10 col-sm-10 nopadding">
+                                <input class="typeahead" data-autocomplete-id-field="Id"
+                                       data-autocomplete-url="/Product/GetProductListBySKU"
+                                       data-onselect-function="QuickOrder.prototype.OnItemSelect"
+                                       data_autocomplete_url="/Product/GetProductListBySKU"
+                                       data_onselect_function="QuickOrder.prototype.OnItemSelect" id="hdnttxtSKU"
+                                       name="Name" placeholder="Enter SKU" type="text" value=""/>
+                              </div>
+                              <div class="col-xs-2 nopadding">
+                                <input class="quantity txtQuickOrderQuantity" id="txtQuickOrderQuantity" maxlength="4"
+                                       name="Quantity" onchange="QuickOrder.prototype.OnQuantityChange(this)"
+                                       placeholder="Qty" type="text" value=""/>
+                              </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                              <div class="col-xs-6 nopadding">
+                                <a class="multiple-sku" href="http://localhost:3288/Product/QuickOrderPad">Enter
+                                  Multiple SKUs</a>
+                              </div>
+                              <div class="col-xs-6 nopadding">
+                                <button class="btn-card btn-add-cart btn-bg-primary pull-right quickOrderAddToCart"
+                                        id=btnQuickOrder onchange="QuickOrder.prototype.OnQuantityChange(this)"
+                                        disabled="disabled"><i class="zf-cart"></i>Add To Cart
+                                </button>
+                              </div>
+                              <p id="inventorymsg" class="error-msg"></p>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+
+                    </li>
+                    <li>
+                      <a href='/cart'><i class='f-size zf-cart header-toolbar-cart'></i><span class='cartcount'></span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header-nav-container">
+            <div class="container">
+              <div class="row">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-nav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <!--Navigation Widget-->
+                <nav class="header-nav yamm" role="navigation">
+                  <div class="container">
+                    <div class="row">
+                      <div class="navbar-collapse collapse" id="navbar-collapse-nav">
+
+                        <ul class="nav navbar-nav" style="height:20px;">
+                          <li class="nav-home"><a href="http://localhost:3288/" title="Home"><i class="zf-home"></i></a>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/nuts"><i class="zf-caret-right"></i> Nuts</a>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/cheese"><i class="zf-caret-right"></i> Cheese</a>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/flowers"><i class="zf-caret-right"></i> Flowers</a>
+                            <ul class="dropdown-menu list-unstyled fadeInUp animated">
+
+                              <li>
+                                <a href="http://localhost:3288/Category/50"><i class="zf-arrow-right-small"></i>Pistachios</a>
+                              </li>
+
+                            </ul>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/organic-produce"><i class="zf-caret-right"></i> Organic
+                              Produce</a>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/wines"><i class="zf-caret-right"></i> Wine</a>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/fruit"><i class="zf-caret-right"></i> Fruits</a>
+                            <ul class="dropdown-menu list-unstyled fadeInUp animated">
+
+                              <li>
+                                <a href="http://localhost:3288/premiumfruit"><i class="zf-arrow-right-small"></i>Premium
+                                  Fruit</a>
+                              </li>
+                              <li>
+                                <a href="http://localhost:3288/organic-fruits"><i class="zf-arrow-right-small"></i>Organic
+                                  Fruits</a>
+                              </li>
+
+                            </ul>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/gifts"><i class="zf-caret-right"></i> Gifts</a>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/vegetables"><i class="zf-caret-right"></i> Vegetables</a>
+                          </li>
+                          <li class="dropdown  yamm-fw">
+                            <a href="http://localhost:3288/Brand/List"><i class="zf-caret-right"></i> Brands</a>
+
+                            <ul class="dropdown-menu list-unstyled fadeInUp animated">
+                              <li>
+                                <a href="http://localhost:3288/tropicana"><i class="zf-arrow-right-small"></i>Tropicana</a>
+                              </li>
+                              <li>
+                                <a href="http://localhost:3288/kroger"><i class="zf-arrow-right-small"></i>Kroger</a>
+                              </li>
+                              <li>
+                                <a href="http://localhost:3288/wholefoods"><i class="zf-arrow-right-small"></i>Whole
+                                  Foods</a>
+                              </li>
+                              <li class="view-all">
+                                <a href="http://localhost:3288/Brand/List"><i class="zf-arrow-right-small"></i>View All
+                                  Brands</a>
+                              </li>
+                            </ul>
+
+                          </li>
+
+                        </ul>
+
+                        <a href="javascript:void(0);" class="control_next nav-drop pull-right"><i
+                          class="zf-text-view nav-drop-icon"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container nav-drop-container">
+                    <ul id="others-menu" class="dropdown-menu dropdown-inner" style="display:none"></ul>
+                  </div>
+                </nav>
+
+              </div>
+            </div>
+          </div>
+          <script>
+            $.ajax({url: "/Home/GetCartCount", type: "get"}).done(function (t) {
+              $(".cartcount").html(t);
+            });
+            $.ajax({url: "/User/LoginStatus", type: "get"}).done(function (t) {
+              $(".loginStatus").html(t);
+            });
+          </script>
+
+
+        </div>
+      </div>
+    </header>
+    <div id="layout-content">
+      <div class="container-fluid" id="SuccessMessage">
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Notification Msg -->
+          <div class="container">
+            <div class="row">
+              <div class="notification-msg" id="body">
+                <div class="messageBoxContainer" id="messageBoxContainerId" data-message=""></div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div id="layout-category" data-category="Nuts" data-categoryId="39" class="main-wrapper">
+
+            <!-- Breadcrumb -->
+            <div id="breadCrumb" class="breadcrumb-container"><a href='/'>Home</a> / Nuts</div>
+            <div class="container">
+              <div class="row">
+                <aside class="col-xs-12 col-sm-3 side-bar">
+
+                  <div class="facets-content-area"></div>
+                  <script>$.ajax({
+                    url: "/Search/GetFacets?cMSMappingId=" + 39 + "&displayName=" + 'Facet' + "&typeOfMapping=" + 'Nuts' + "&widgetCode=" + 'Facet' + "&widgetKey=" + '125' + "&properties=" + '',
+                    type: "get"
+                  }).done(function (t) {
+                    $(".facets-content-area").html(t);
+                  });</script>
+                  <div class="col-xs-12 nopadding">
+                    <div id="compareProductList">
+                    </div>
+                  </div>
+                </aside>
+                <div class="col-xs-12 col-sm-9 category-landing-container">
+                  <div class="col-xs-12 nopadding brand-banner">
+                    <div class="col-sm-9 nopadding">
+                      <h1>Nuts</h1>
+                      <p></p>
+                    </div>
+                    <div class="col-sm-3 nopadding">
+                      <img
+                        src="http://localhost:44762/Data/Media/Catalog/1/400/a84c2143-a0b0-4915-8f71-4e8db23144ecpistachios.jpg"
+                        class="img-responsive"
+                        src="http://localhost:44762/Data/Media/Catalog/1/400/a84c2143-a0b0-4915-8f71-4e8db23144ecpistachios.jpg"
+                        alt="Image" title="Nuts"/>
+                    </div>
+                  </div>
+                  <div class="sub-categpry-content-area"></div>
+                  <script>$.ajax({
+                    url: "/Search/GetSubCategories?cMSMappingId=" + 39 + "&displayName=" + 'CategoryList' + "&typeOfMapping=" + 'PortalMapping' + "&widgetCode=" + 'CategoryGrid' + "&widgetKey=" + '123',
+                    type: "get"
+                  }).done(function (t) {
+                    $(".sub-categpry-content-area").html(t);
+                  });</script>
+
+
+                  <div class="col-xs-12 product-grid nopadding">
+                    <div class="col-xs-12 nopadding products-modes-setting">
+                      <div class="col-xs-12 col-sm-6 nopadding">
+                        <h1>Nuts</h1>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 nopadding">
+                        <div class="view-mode pull-right">
+                          <span>View Mode: &nbsp;</span>
+                          <a href="javascript:void(0);" class="productview grid-view-opt-active" title="Grid View"><i
+                            class="zf-grid-view"></i></a>
+                          <a href="javascript:void(0);" class="productview list-view-opt" title="List View"><i
+                            class="zf-list-view"></i></a>
+                          <a href="javascript:void(0);" class="productview text-view-opt" title="Text View"><i
+                            class="zf-text-view"></i></a>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-sm-12 nopadding">
+
+                      <p class="search-result">Showing 16 plp results</p>
+
+                    </div>
+                    <div class="col-sm-offset-2 col-md-offset-3" id="pagingsearching">
+                      <div id="layout-paging">
+                        <div class="search-paging col-xs-12 col-sm-8 margin-top nopadding">
+                          <div class="col-xs-8 nopadding search-pagination">
+                            <ul>
+                              <li class="search-more-nav arrow-left"><a id="prev-page-search" href="javascript: void(0)"
+                                                                        data-pageno="" class="button"
+                                                                        title="Previous"><i
+                                class='zf-arrow-left-big'></i></a></li>
+                              <li class="search-more-nav arrow-right"><a id="next-page-search"
+                                                                         href="javascript: void(0)" data-pageno=""
+                                                                         class="button" title="Next"><i
+                                class='zf-arrow-right-big'></i></a></li>
+                            </ul>
+                            <input data-val="true" data-val-number="The field TotalPages must be a number."
+                                   data-val-required="The TotalPages field is required." id="hdnTotalPages"
+                                   name="TotalPages" type="hidden" value="1"/>
+                          </div>
+                          <div class="col-xs-4 nopadding">
+                            <form name="SearchPaging">
+                              <input name="__RequestVerificationToken" type="hidden"
+                                     value="q4-9lZVQbEhVMaGqv6i1anhcaaWqZeLWeN73cuUuLwOUYgrb0wLmre4QlCD7_YRt1EW7Dt-tnNUbr9ZCSuH1UbfMX0gdL_J5nVaUf7buW-41"/>
+
+
+                              <select id="PageSize" name="PageSize">
+                                <option selected="selected" value="16">Show 16</option>
+                                <option value="32">Show 32</option>
+                                <option value="64">Show 64</option>
+                              </select>
+                            </form>
+                            <script>
+                              $(document).ready(function () {
+                                totalPages = parseInt($("#hdnTotalPages").val(), 10);
+                                var pageno = ZSearch.prototype.GetQueryStringParameterByName("pagenumber");
+                                if (totalPages == 1) {
+                                  $('#prev-page-search').addClass('disabled');
+                                  $('#next-page-search').addClass('disabled');
+                                  return false;
+                                }
+                                if (parseInt(pageno) == 1 || pageno == "") {
+                                  $('#prev-page-search').addClass('disabled');
+                                  return false;
+                                }
+                                if (parseInt(pageno) == (totalPages)) {
+                                  $('#next-page-search').addClass('disabled');
+                                  return false;
+                                }
+                              });
+                            </script>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="layout-search">
+                        <div class="search-sorting col-xs-12 col-sm-4 margin-top nopadding pull-right">
+                          <div>
+                            <form name="SearchSort">
+                              <input name="__RequestVerificationToken" type="hidden"
+                                     value="D_8TOfwcTVIeZPF3xaM19BwCIkbTaA_yRsDeAHN03Xp-QFKpUHqWzUF6T2MNacpenjRyoWzN1-QpHZ7gZvDsU0W2RPjbtBreag8QJ8cO73g1"/>
+
+
+                              <select id="Sort" name="Sort">
+                                <option selected="selected" value="0">Sort by</option>
+                                <option value="1">Highest Rating</option>
+                                <option value="2">Most Review</option>
+                                <option value="3">Sort by: Price, High to Low</option>
+                                <option value="4">Sort by: Price, Low to High</option>
+                                <option value="5">Sort by: Name, A to Z</option>
+                                <option value="6">Sort by: Name, Z to A</option>
+                                <option value="7">Out Of Stock</option>
+                                <option value="8">In Stock</option>
+                              </select>
+                            </form>
+
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-xs-12 product-view nopadding">
+                      <ul id="view-option-productgrid" class="product-grid-ul grid-view">
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/whole-salted-cashews">
+                                  <div class="image">
+
+                                    <img id="145" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/e4ac192b-17b4-4820-931f-feb604006d66cashews.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="145"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/whole-salted-cashews">
+                                  <h4 class="title">Whole Salted Cashews</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+
+</span>
+
+                                  5 | (1) <a href="http://localhost:3288/whole-salted-cashews#scrollReview"
+                                             id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKWSC123" data-type="">
+                                <span>
+                                    $4.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/whole-salted-cashews">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/roasted-pistachios">
+                                  <div class="image">
+
+                                    <img id="155" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/a84c2143-a0b0-4915-8f71-4e8db23144ecpistachios.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="155"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/roasted-pistachios">
+                                  <h4 class="title">Roasted Pistachios</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/roasted-pistachios#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKRP1223" data-type="">
+                                <span>
+                                    $7.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/roasted-pistachios">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/honey-roasted-peanuts">
+                                  <div class="image">
+
+                                    <img id="163" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/ca0d7e87-0433-4059-8c90-118a7a1b64c0honeyroastedpeanuts.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="163"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/honey-roasted-peanuts">
+                                  <h4 class="title">Honey Roasted Peanuts</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/honey-roasted-peanuts#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKUMN2345B" data-type="">
+                                <span>
+                                    $9.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/honey-roasted-peanuts">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/uvas-fruit">
+                                  <div class="image">
+
+                                    <img id="196" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/d9a98db6-52df-4692-b7ae-b50f55980dc8grapes.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="196"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/uvas-fruit">
+                                  <h4 class="title">Uvas</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/uvas-fruit#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="ap1534" data-type="">
+                                <span>
+                                    $4.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/uvas-fruit">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/roasted-cashews">
+                                  <div class="image">
+
+                                    <img id="156" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/e4ac192b-17b4-4820-931f-feb604006d66cashews.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="156"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/roasted-cashews">
+                                  <h4 class="title">Roasted Cashews</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/roasted-cashews#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKU2345" data-type="">
+                                <span>
+                                    $9.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/roasted-cashews">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/honey-covered-cashews">
+                                  <div class="image">
+
+                                    <img id="152" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/c8547adc-9238-44e4-8cb1-532605fe2c89honsescashews.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="152"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/honey-covered-cashews">
+                                  <h4 class="title">Honey Covered Cashews</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/honey-covered-cashews#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKRP1234" data-type="">
+                                <span>
+                                    $2.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/honey-covered-cashews">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/shelled-almonds">
+                                  <div class="image">
+
+                                    <img id="157" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/c619d256-421d-4f56-9c2b-18f3faab5e39almonds.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="157"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/shelled-almonds">
+                                  <h4 class="title">Shelled Almonds</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/shelled-almonds#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKUSA2345" data-type="">
+                                <span>
+                                    $6.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/shelled-almonds">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/chocolate-covered-almonds">
+                                  <div class="image">
+
+                                    <img id="162" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/48b6141a-cfb8-402d-a3c0-3ffaa9e67d15chocoalmonds.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="162"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/chocolate-covered-almonds">
+                                  <h4 class="title">Chocolate Covered Almonds</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/chocolate-covered-almonds#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKUPN2345B" data-type="">
+                                <span>
+                                    $18.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/chocolate-covered-almonds">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/georgia-pecans">
+                                  <div class="image">
+
+                                    <img id="154" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/c9f331f1-a228-42c0-881f-cff586ba3e67pecans.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="154"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/georgia-pecans">
+                                  <h4 class="title">Georgia Pecans</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/georgia-pecans#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKGP12323" data-type="">
+                                <span>
+                                    $3.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/georgia-pecans">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/macadamia-nuts">
+                                  <div class="image">
+
+                                    <img id="158" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/3a57bfc1-bb5b-4a49-b623-42cd8b2335e2macadamias.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="158"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/macadamia-nuts">
+                                  <h4 class="title">Macadamia Nuts</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/macadamia-nuts#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKUMN2345" data-type="">
+                                <span>
+                                    $12.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/macadamia-nuts">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/fresh-brazil-nuts">
+                                  <div class="image">
+
+                                    <img id="161" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/02bd5cb5-010b-42dc-b17f-7866af31d838brazil.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="161"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/fresh-brazil-nuts">
+                                  <h4 class="title">Fresh Brazil Nuts</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/fresh-brazil-nuts#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKUFC2345" data-type="">
+                                <span>
+                                    $6.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/fresh-brazil-nuts">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/arreglos-comestibles">
+                                  <div class="image">
+
+                                    <img id="195" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/660ab999-0a8f-4e73-8df6-0fb5d91137ecj0438709.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="195"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/arreglos-comestibles">
+                                  <h4 class="title">Arreglos Comestibles</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/arreglos-comestibles#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="ear51" data-type="">
+                                <span>
+                                    $50.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/arreglos-comestibles">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/english-walnuts">
+                                  <div class="image">
+
+                                    <img id="153" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/d3850607-06ee-4664-a819-ae816dee738dwalnuts.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="153"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/english-walnuts">
+                                  <h4 class="title">English Walnuts</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/english-walnuts#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKEW1234" data-type="">
+                                <span>
+                                    $3.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/english-walnuts">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/raw-peanuts">
+                                  <div class="image">
+
+                                    <img id="159" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/7d33260e-a08d-4fd6-8bb1-deb870a4cfeeshellpeanuts.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="159"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/raw-peanuts">
+                                  <h4 class="title">Raw Peanuts</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/raw-peanuts#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKURP2345" data-type="">
+                                <span>
+                                    $6.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/raw-peanuts">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/hazelnut">
+                                  <div class="image">
+
+                                    <img id="160" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/e8188381-94f9-46e9-95c3-4bd78b4c1129hazel.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="160"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/hazelnut">
+                                  <h4 class="title">Hazelnuts</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/hazelnut#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="SKUSS2345" data-type="">
+                                <span>
+                                    $3.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/hazelnut">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+                        <li>
+                          <article class="product-item">
+
+                            <div class="view-item">
+                              <div class="product-img">
+
+                                <a href="http://localhost:3288/frambuesa">
+                                  <div class="image">
+
+                                    <img id="194" class="img-responsive b-lazy"
+                                         src="http://localhost:44762/Data/Media/Catalog/1/250/cb714aff-4ba4-4ec6-8853-129ba2816175raspberries.jpg"
+                                         alt="Product"/>
+                                  </div>
+                                </a>
+
+                                <button onclick="Product.prototype.GetProductDetails(this)"
+                                        class="btn-card btn-quick-view btn-bg-secondary hvr-shadow"
+                                        data-review-state-id="" data-product-is-active="" data-value="194"
+                                        data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">
+                                  Quick View
+                                </button>
+                              </div>
+                              <div class="product-details">
+                                <a href="http://localhost:3288/frambuesa">
+                                  <h4 class="title">Frambuesas</h4>
+                                </a>
+                                <div class="product-rating">
+            <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                                  <a href="http://localhost:3288/frambuesa#scrollReview"
+                                     id="jumpto-readreviews-productTile">Read reviews</a>
+                                </div>
+                                <div class="price" data-sku="RSSK6988" data-type="">
+                                <span>
+                                    $6.00
+                                </span>
+
+                                </div>
+                                <div class="item-error-msg">
+                                  <p class="error-msg"></p>
+                                </div>
+                                <a href="http://localhost:3288/frambuesa">View More Details</a>
+
+                              </div>
+
+                            </div>
+
+                          </article>
+                        </li>
+
+                      </ul>
+
+                      <div id="loading" class="loader" style="display:none;"></div>
+                    </div>
+                  </div>
+                  <script>
+                    $(document).ready(function () {
+                      var async = 'False';
+                      if (async == 'True') {
+                        Product.prototype.GetPriceAsync();
+                      }
+                      $("#searchTextBox").val('');
+
+                    })
+                  </script>
+
+
+                </div>
+                <div class="col-xs-12 nopadding">
+                  <div class="category-more text-center margin-top-bottom">
+                    <a href="http://localhost:3288/category/Nuts/39?viewAll=True" class="btn-text btn-bg-primary">
+                      View All Nuts
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xs-12 nopadding">
+                  <div class="category-recent-view-list">
+                    <div class="product-list-widget">
+                      <div id="recent-view-products" class="recent-view-items">
+                      </div>
+                      <script type="text/javascript">
+                        var ProductId = $("div[id='layout-product']").attr("data-id");
+                        $.ajax({
+                          url: "/Product/GetRecentViewProducts?productId=" + ProductId,
+                          type: "get"
+                        }).done(function (t) {
+                          $(".recent-view-items").html(t)
+                          ZnodeBase.prototype.onImageError();
+                        });
+                      </script>
+
+                    </div>
+
+                </div>
+              </div>
+            </div>
+            <input type="hidden" value="39" id="categoryId"/>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!--Footer Widgets-->
+    <footer id="layout-footer">
+      <div class="container-fluid" id="footer-content-area"></div>
+      <script>$.ajax({url: "/Home/Footer", type: "get", footerContext: true}).done(function (t) {
+        $("#footer-content-area").html(t);
+        InitbLazy();
+      });</script>
+    </footer>
+
+  </div>
+  <script id="tmpl-typeahead-results" type="text/template">
+    <a href="#" class="close"><i class="zf-close close"></i></a>
+    <ul>
+      {{#matches}}
+      <li><a href="http://localhost:3288/Search?searchTerm={{term}}&category={{category}}"><strong>{{product}}</strong>
+        {{suffix}}</a></li>
+      {{/matches}}
+    </ul>
+  </script>
+  <script id="tmpl-alertmessage" type="text/template">
+    <div id="status-message" class="{{style}} alert alert-info text-center">{{message}}</div>
+  </script>
+
+
+  <input id="hdnPaymentAppUrl" name="hdnPaymentAppUrl" type="hidden" value="http://localhost:56247/"/>
+  <input id="hdnWebStoreUrl" name="hdnWebStoreUrl" type="hidden" value="http://localhost:3288"/>
+  <script src="http://localhost:3288/bundles/CoreJs"></script>
+
+  <script src="http://localhost:3288/bundles/CustomJs"></script>
+
+
+  <script src="http://localhost:3288/Scripts/lib/infiniteScroll.js" async></script>
+
+
+  <div class="modal fade quick-view-popup" id="quick-view-popup-ipad" tabindex="-1" role="dialog"
+       aria-labelledby="mySmallModalLabel">
+    <div class="popup-container modal-dialog">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span id="close-quick-view-popup-ipad"
+                                                                                        aria-hidden="true"><i
+        class="zf-close"></i></span></button>
+      <div id="quick-view-content">
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="NoCheckboxSelected" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="z-close-circle"></i></button>
+          <h4 class="modal-title">Error!!</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please select at least one record.</p>
+        </div>
+        <div class="modal-footer">
+          <div class="pull-right">
+            <button type="button" id="btn-cancel-popup" class="btn-text-icon" data-dismiss="modal"><i class='z-ok'></i>Ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="PopUpConfirm" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="z-close-circle"></i></button>
+          <h4 class="modal-title">Confirm Delete?</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete the selected record?</p>
+        </div>
+        <div class="modal-footer">
+          <div class="pull-right">
+            <button type='button' class='btn-text-icon' data-dismiss="modal"
+                    onclick="javascript:$('body').removeClass('modal-open');$('body').removeAttr('style'); DynamicGrid.prototype.RedirectToDelete(this)">
+              <i class='z-ok'></i>Ok
+            </button>
+            <button type="button" id="btn-cancel-popup" class="btn-text-icon" data-dismiss="modal"><i
+              class='z-cancel'></i>Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="divAddedForCompare" class="modal fade comparepopup" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="compare-product-popup" id="popUp_content">
+    </div>
+  </div>
+  <button id="btnAddCompare" style="display:none" data-toggle="modal" data-target=".comparepopup">Compare</button>
+</div>
+
+<script>
+  $(window).on("scroll touchmove", function () {
+    $('.header').toggleClass('shrink', $(document).scrollTop() > 0);
+  });
+  var dataLayer = [];
+</script>
+
+
