@@ -1,3 +1,977 @@
-<h1>
-  <span translate>Categories</span>
-</h1>
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script src="http://localhost:3288/bundles/jquery"></script>
+
+
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>Maxwell's Fine Food</title>
+
+  <!--<link href="http://localhost:44762/Data/Media/022ccd41-e2a4-47ef-8e7a-9b82704fd7aamaxwell.ico" rel="shortcut icon" type="image/x-icon" onerror="this.onerror = null; this.src = 'favicon.ico'">-->
+  <!--<meta name="description" content="" />-->
+  <!--<meta name="keywords" content="">-->
+  <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8">-->
+
+  <!--<link href="http://localhost:3288/Views/Themes/Default/Content/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" async/>-->
+  <!--<link href="http://localhost:3288/Views/Themes/Default/Content/css/site.min.css" rel="stylesheet" async />-->
+
+  <!--<script src="http://localhost:3288/Views/Themes/Default/Content/bootstrap-3.3.7/js/bootstrap.min.js" async></script>-->
+  <!--<script src="http://localhost:3288/Views/Themes/Default/Scripts/lib/event.min.js" async></script>-->
+
+
+
+</head>
+<div id="Home"  class="Index" data-controller="Home" data-view="Index" onload="javascript: var notification = new ZnodeNotification(); notification.DisplayNotificationMessages();">
+
+
+<link href="http://localhost:44762/Data/Media/022ccd41-e2a4-47ef-8e7a-9b82704fd7aamaxwell.ico" rel="shortcut icon" type="image/x-icon" onerror="this.onerror = null; this.src = 'favicon.ico'">
+<meta name="description" content="" />
+<meta name="keywords" content="">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link href="http://localhost:3288/Views/Themes/Default/Content/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" async/>
+<link href="http://localhost:3288/Views/Themes/Default/Content/css/site.min.css" rel="stylesheet" async />
+
+<script src="http://localhost:3288/Views/Themes/Default/Content/bootstrap-3.3.7/js/bootstrap.min.js" async></script>
+<script src="http://localhost:3288/Views/Themes/Default/Scripts/lib/event.min.js" async></script>
+
+<div id="layout" class="wrapper">
+
+  <!--Header Widgets-->
+  <header>
+    <div class="container-fluid header">
+      <div class="row">
+
+        <div class="container-fluid">
+          <div class="row header-local-container">
+            <div class="container">
+              <div class="row">
+                <!--Locales Widget-->
+
+                  <form action="/Home/ChangeLocale" method="post"><input name="__RequestVerificationToken" type="hidden" value="qd9w562vQ7uPq7ldGC0QKmdaQMhNqlW7ZAS4PDMPlSxuqVx7lFtpD8NrtPk84ucFAvRiJKdCSQjexsZcEL2Izwbn8ZJfiUoY8HzToTYNe7w1" />    <div class="local-widget">
+                    <div class="dropdown">
+                      <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="flag us"></span>English<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                          <h5>Select Locale</h5>
+                          <div>
+                            <ul>
+                              <li><a href='/Home/ChangeLocale?LocaleId=1'>English</a></li> <li><a href='/Home/ChangeLocale?LocaleId=4'>Spanish</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  </form>
+
+
+                <div class="pull-right track-order">
+                  <a href="http://localhost:3288/User/GetOrderDetails">Track Order</a>
+                </div>
+                <span class="label-environment pull-right padding-right-15 label-current-environment-DEV">Mode: DEV</span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-5 col-md-3 nopadding">
+              <a href="http://localhost:3288/" class="header-logo">
+                <img data-src="http://localhost:44762/Data/Media/980c3e7d-79cf-4516-97ff-6a3fb9509a71logo-desktop.png" alt="Maxwell&#39;s Fine Food" class="img-responsive b-lazy" />
+
+              </a>
+            </div>
+            <div class="header-link-contain nopadding">
+              <div class="col-xs-12 col-sm-7 col-sm-offset-2 col-md-offset-1 col-md-4 nopadding">
+                <!--Search Widget-->
+                <div class="search-widget">
+                  <form action="/Search" method="GET">
+                    <div class="left-inner-icon input-group">
+                      <i class="zf-search"></i>
+                      <input Name="SearchTerm" class="typeahead" data-autocomplete-id-field="Id" data-autocomplete-url="/Search/GetSuggestions" data-onselect-function="Product.prototype.GetSuggestionResult" data_autocomplete_url="/Search/GetSuggestions" data_onselect_function="Product.prototype.GetSuggestionResult" id="searchTextBox" name="Name" placeholder="Search..." type="text" value="" />
+                      <span class="input-group-btn">
+                <button type="submit" class="btn-text btn-bg-primary" id="btnSearchTerm">Go</button>
+            </span>
+                    </div>
+                    <div id="typeahead-results" class="ui-autocomplete-home"></div>
+                  </form>
+                </div>
+
+                  <script>
+                    $(document).ready(function () {
+                      Search.prototype.ValidateSearch();
+                    });
+                  </script>
+
+
+
+              </div>
+              <div class="col-xs-12 col-sm-9 col-md-5 header-link nopadding pull-right">
+                <ul>
+                  <li><span class="loginStatus"></span></li>
+                  <li class="quick-order-li">
+                    <!--Quick Order Widget-->
+                    <div class="quick-order-container quickordercontainer">
+                      <i class="f-size zf-quick-order order-link"></i><a data-hover="dropdown" class="quickOrder dropdown-toggle">Quick Order</a>
+                      <form id="addtocart-form"  method="post" action="/Product/AddToCartProduct">
+                        <input name="__RequestVerificationToken" type="hidden" value="-K6bnYlBuHXJrI9lZkMwpCMgyqdRNo7mqenLd7jNFQZVBUyPk_7okJV-um74JjN-aLaC3w1vTCYevWYdCmkWcb9VHUBq0eDI_GjxfSFmhlo1" />
+                        <input type="hidden" id="hdnQuickOrderProductId" name="ProductId" />
+                        <input type="hidden" id="hdnQuickOrderProductName" name="ProductName" />
+                        <input type="hidden" id="hdnQuickOrderSku" name="SKU" />
+                        <input type="hidden" id="hdnInvetoryCode" name="InventoryCode" />
+                        <input type="hidden" id="hdnQuickOrderProductType" name="ProductType" />
+                        <input type="hidden" id="hdnQuickOrderCartQuantity" name="CartQuantity" />
+                        <input type="hidden" id="hdnQuickOrderQuantityOnHand" name="QuantityOnHand" />
+                        <input type="hidden" id="hdnQuickOrderInStockMessage" name="InStockMessage" />
+                        <input type="hidden" id="hdnQuickOrderOutOfStockMessage" name="OutOfStockMessage" />
+                        <input type="hidden" id="hdnQuickOrderInventoryMessage" name="InventoryMessage" />
+                        <input type="hidden" id="hdnQuickOrderInventoryTracking" name="TrackInventory" />
+                        <input type="hidden" id="hdnQuickOrderMinQty" name="MinQty" />
+                        <input type="hidden" id="hdnQuickOrderMaxQty" name="MinQty" />
+                        <input type="hidden" id="hdnQuickOrderCallForPricing" name="CallForPricing" />
+                        <input type="hidden" id="hdnRetailPrice" name="RetailPrice" />
+                        <input type="hidden" id="hdnIsPersonisable" name="IsPersonisable" />
+                        <input type="hidden" id="hdnConfigurableProductSKUs" name="ConfigurableProductSKUs" />
+                        <input type="hidden" id="hdnGroupProductSKUs" name="GroupProductSKUs" />
+                        <input type="hidden" id="hdnGroupProductsQuantity" name="GroupProductsQuantity" />
+                        <input type="hidden" id="hdnAutoAddonSKUs" name="AutoAddonSKUs" />
+
+                        <div class="dropdown-menu quick-order divQuickOrder">
+                          <div class="close-quick-order-popup close"><i class="zf-close"></i></div>
+                          <div class="col-xs-12">
+                            <div class="col-xs-10 col-sm-10 nopadding">
+                              <input class="typeahead" data-autocomplete-id-field="Id" data-autocomplete-url="/Product/GetProductListBySKU" data-onselect-function="QuickOrder.prototype.OnItemSelect" data_autocomplete_url="/Product/GetProductListBySKU" data_onselect_function="QuickOrder.prototype.OnItemSelect" id="hdnttxtSKU" name="Name" placeholder="Enter SKU" type="text" value="" />
+                            </div>
+                            <div class="col-xs-2 nopadding">
+                              <input class="quantity txtQuickOrderQuantity" id="txtQuickOrderQuantity" maxlength="4" name="Quantity" onchange="QuickOrder.prototype.OnQuantityChange(this)" placeholder="Qty" type="text" value="" />
+                            </div>
+                          </div>
+
+                          <div class="col-xs-12">
+                            <div class="col-xs-6 nopadding">
+                              <a class="multiple-sku" href="http://localhost:3288/Product/QuickOrderPad">Enter Multiple SKUs</a>
+                            </div>
+                            <div class="col-xs-6 nopadding">
+                              <button class="btn-card btn-add-cart btn-bg-primary pull-right quickOrderAddToCart" id=btnQuickOrder onchange="QuickOrder.prototype.OnQuantityChange(this)" disabled="disabled"><i class="zf-cart"></i>Add To Cart</button>
+                            </div>
+                            <p id="inventorymsg" class="error-msg"></p>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+
+
+
+                  </li>
+                  <li>
+                    <a href='/cart'><i class='f-size zf-cart header-toolbar-cart'></i><span class='cartcount'></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-nav-container">
+          <div class="container">
+            <div class="row">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-nav">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <!--Navigation Widget-->
+              <nav class="header-nav yamm" role="navigation">
+                <div class="container">
+                  <div class="row">
+                    <div class="navbar-collapse collapse" id="navbar-collapse-nav">
+
+                      <ul class="nav navbar-nav" style="height:20px;">
+                        <li class="nav-home"><a href="http://localhost:3288/" title="Home"><i class="zf-home"></i></a></li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/nuts"><i class="zf-caret-right"></i> Nuts</a>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/cheese"><i class="zf-caret-right"></i> Cheese</a>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/flowers"><i class="zf-caret-right"></i> Flowers</a>
+                          <ul class="dropdown-menu list-unstyled fadeInUp animated">
+
+                            <li>
+                              <a href="http://localhost:3288/Category/50"><i class="zf-arrow-right-small"></i>Pistachios</a>
+                            </li>
+
+                          </ul>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/organic-produce"><i class="zf-caret-right"></i> Organic Produce</a>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/wines"><i class="zf-caret-right"></i> Wine</a>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/fruit"><i class="zf-caret-right"></i> Fruits</a>
+                          <ul class="dropdown-menu list-unstyled fadeInUp animated">
+
+                            <li>
+                              <a href="http://localhost:3288/premiumfruit"><i class="zf-arrow-right-small"></i>Premium Fruit</a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:3288/organic-fruits"><i class="zf-arrow-right-small"></i>Organic Fruits</a>
+                            </li>
+
+                          </ul>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/gifts"><i class="zf-caret-right"></i> Gifts</a>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/vegetables"><i class="zf-caret-right"></i> Vegetables</a>
+                        </li>
+                        <li class="dropdown  yamm-fw">
+                          <a href="http://localhost:3288/Brand/List"><i class="zf-caret-right"></i> Brands</a>
+
+                          <ul class="dropdown-menu list-unstyled fadeInUp animated">
+                            <li>
+                              <a href="http://localhost:3288/tropicana"><i class="zf-arrow-right-small"></i>Tropicana</a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:3288/kroger"><i class="zf-arrow-right-small"></i>Kroger</a>
+                            </li>
+                            <li>
+                              <a href="http://localhost:3288/wholefoods"><i class="zf-arrow-right-small"></i>Whole Foods</a>
+                            </li>
+                            <li class="view-all">
+                              <a href="http://localhost:3288/Brand/List"><i class="zf-arrow-right-small"></i>View All Brands</a>
+                            </li>
+                          </ul>
+
+                        </li>
+
+                      </ul>
+
+                      <a href="javascript:void(0);" class="control_next nav-drop pull-right"><i class="zf-text-view nav-drop-icon"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="container nav-drop-container">
+                  <ul id="others-menu" class="dropdown-menu dropdown-inner" style="display:none"></ul>
+                </div>
+              </nav>
+
+            </div>
+          </div>
+        </div>
+        <script>
+          $.ajax({ url: "/Home/GetCartCount", type: "get" }).done(function (t) { $(".cartcount").html(t); });
+          $.ajax({ url: "/User/LoginStatus", type: "get" }).done(function (t) { $(".loginStatus").html(t); });
+        </script>
+
+
+      </div>
+    </div>
+  </header>
+  <div id="layout-content">
+    <div class="container-fluid" id="SuccessMessage">
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Notification Msg -->
+        <div class="container">
+          <div class="row">
+            <div class="notification-msg" id="body">
+              <div class="messageBoxContainer" id="messageBoxContainerId" data-message=""></div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div id="layout-home">
+
+
+          <div class="container-fluid">
+            <!--Home Page Slider Widget-->
+            <div class="row">
+              <div id="top-slider" data-navigation="Dots" class="owl-carousel slider Top-Slider Full Width">
+                <div class="item active">
+                  <a href="http://localhost:3288/fruit" target="_blank">
+                    <img src="http://localhost:44762/Data/Media/988b28ef-74b8-4d32-b2d4-afba2831a23cslider-1.png" />
+                    <div class="carousel-caption Left Align">
+                      <p class="first" style="box-sizing: border-box; margin: 0px; font-size: 24px; text-transform: capitalize; color: #ffffff; position: relative; font-family: Arial;"><span style="color: #ffffff;">Today's Fresh</span></p>
+                      <h3 style="box-sizing: border-box; font-family: Arial; font-weight: normal; line-height: 1.1; color: #ffffff; margin: 0px; font-size: 72px; text-transform: uppercase; position: relative;"><span style="color: #ffffff;">FRUITS</span></h3>
+                      <div style="box-sizing: border-box; font-size: 18px; text-transform: uppercase; color: #ffffff; position: relative; margin-bottom: 0px; font-family: Arial;"><span style="color: #ffffff;">FRESH PRODUCTS FROM AROUND THE GLOBE.</span></div>
+                    </div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="http://localhost:3288/wines" target="_blank">
+                    <img src="http://localhost:44762/Data/Media/56680d4a-660e-45f1-bb3d-7fc3e46d9526slider-2.png" />
+                    <div class="carousel-caption Left Align">
+                      <p class="first" style="box-sizing: border-box; margin: 0px; font-size: 24px; text-transform: capitalize; color: #ffffff; position: relative; font-family: Arial;"><span style="color: #ffffff;">New Line Of Wine</span></p>
+                      <h3 style="box-sizing: border-box; font-family: Arial; font-weight: normal; line-height: 1.1; color: #ffffff; margin: 0px; font-size: 72px; text-transform: uppercase; position: relative;"><span style="color: #ffffff;">ITALIAN</span></h3>
+                      <div style="box-sizing: border-box; font-size: 18px; text-transform: uppercase; color: #ffffff; position: relative; margin-bottom: 0px; font-family: Arial;"><span style="color: #ffffff;">FRESH PRODUCTS FROM AROUND THE GLOBE.</span></div>
+                    </div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="http://localhost:3288/Flowers" target="_blank">
+                    <img src="http://localhost:44762/Data/Media/86c13de7-cf5b-4e5f-996e-554b637e12acslider-3.png" />
+                    <div class="carousel-caption Left Align">
+                      <p class="first" style="box-sizing: border-box; margin: 0px; font-size: 24px; text-transform: capitalize; color: #ffffff; position: relative; font-family: Arial;"><span style="color: #ffffff;">New Bouquets</span></p>
+                      <h3 style="box-sizing: border-box; font-family: Arial; font-weight: normal; line-height: 1.1; color: #ffffff; margin: 0px; font-size: 72px; text-transform: uppercase; position: relative;"><span style="color: #ffffff;">FLOWERS</span></h3>
+                      <div style="box-sizing: border-box; font-size: 18px; text-transform: uppercase; color: #ffffff; position: relative; margin-bottom: 0px; font-family: Arial;"><span style="color: #ffffff;">FRESH PRODUCTS FROM AROUND THE GLOBE.</span></div>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+              <script>
+
+                $(window).on("load",function () {
+                  if("true" == "true"){
+                    $(".Top-Slider").owlCarousel({
+                      navigation: true,
+                      singleItem: true,
+                      autoPlay:3000,
+                      stopOnHover: "false",
+                      transitionStyle: "fadeUp",
+                      navigationText: [
+                        "<i class='zf-arrow-left-big'></i>",
+                        "<i class='zf-arrow-right-big'></i>"
+                      ],
+                    });
+                  }else{
+                    $(".Top-Slider").owlCarousel({
+                      navigation: true,
+                      singleItem: true,
+                      autoPlay: false,
+                      stopOnHover: "false",
+                      transitionStyle: "fadeUp",
+                      //transitionStyle: "fade",
+                      navigationText: [
+                        "<i class='zf-arrow-left-big'></i>",
+                        "<i class='zf-arrow-right-big'></i>"
+                      ],
+                    });
+                  }
+
+                  // For Navigation.
+                  var navigation = $(".Top-Slider").data("navigation");
+                  if(navigation === "Dots"){
+                    $(".Top-Slider .owl-pagination").css("display","block");
+                    $(".Top-Slider .owl-buttons").css("display","none");
+                  }else{
+                    $(".Top-Slider .owl-buttons").css("display","block");
+                    $(".Top-Slider .owl-pagination").css("display","none");
+                  }
+                });
+              </script>
+
+
+          </div>
+          <div class="container">
+
+            <div class="row advertisement-banner">
+              <!--Advertisement Banner Widget-->
+              <h3><h3><strong>Our Special Offers of the Month</strong></h3></h3>
+              <div class="home-offer-slider-area"></div>
+                <script>$.ajax({ url: "/Home/OfferBanner?cMSMappingId=" +1+"&displayName=" + 'AdvertisementBanner' + "&typeOfMapping=" + 'PortalMapping' + "&widgetCode=" + 'OfferBanner' + "&widgetKey=" + '110', type: "get" }).done(function (t) { $(".home-offer-slider-area").html(t);});</script>
+
+            </div>
+            <div class="row">
+              <div class="home-wide-promo">
+                <h5 class="home-promo-title"><strong>Enjoy free shipping</strong> on all orders from <strong>$100</strong></h5>
+              </div>
+            </div>
+            <div class="row">
+              <!--NewArrival Widget-->
+              <div class="product-list-widget">
+                <h3 class="product-list-title">New Arrivals</h3>
+                <div class="owl-carousel Product_List_Widget" id="Product_List_Widget1">
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/grapesfruit">
+                            <div class="image">
+                              <img id="121" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/d9a98db6-52df-4692-b7ae-b50f55980dc8grapes.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="121" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/grapesfruit">
+                            <h4 class="title">Grapes</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                            <a href="http://localhost:3288/grapesfruit#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="ap1234" data-type="">
+                                        <span>
+                                            $4.00
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/grapesfruit">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/product/214">
+                            <div class="image">
+                              <img id="214" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/0bf45274-1f61-41b7-a304-533525c2200bGarden Bouquet.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="214" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/product/214">
+                            <h4 class="title">THE FTD&#174; GARDEN VISTA™ BOUQUET</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                            <a href="http://localhost:3288/product/214#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="BWG" data-type="">
+                                        <span>
+                                            $45.99
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/product/214">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/bouquetset">
+                            <div class="image">
+                              <img id="217" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/49717198-c56e-475e-8060-09868fbf4d94Pink Dream Bouquet.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="217" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/bouquetset">
+                            <h4 class="title">BOUQUET SET</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                            <a href="http://localhost:3288/bouquetset#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="C13-5038" data-type="">
+                                        <span>
+
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/bouquetset">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/timeless-tradition">
+                            <div class="image">
+                              <img id="218" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/2bf56088-eba3-414b-938b-65189e870c2eTraditions Bouquet.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="218" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/timeless-tradition">
+                            <h4 class="title">THE FTD&#174; TIMELESS TRADITIONS™ BOUQUET TML</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                            <a href="http://localhost:3288/timeless-tradition#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="S44-4542" data-type="">
+                                        <span>
+                                            $29.99
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/timeless-tradition">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <script>
+                  $("#Product_List_Widget1").owlCarousel({
+                    autoPlay: false,
+                    navigation: false,
+                    items: 4,
+                    itemsCustom: [
+                      [0, 1],
+                      [320, 1],
+                      [480, 2],
+                      [600, 2],
+                      [768, 2],
+                      [992, 3],
+                      [1200, 4]
+                    ],
+                    navigationText: [
+                      "<i class='zf-arrow-left-big'></i>",
+                      "<i class='zf-arrow-right-big'></i>"
+                    ]
+                  });
+                </script>
+
+                <script>
+                  $(document).ready(function () {
+                    var async = 'False';
+                    if (async == 'True') {
+                      Product.prototype.GetPriceAsync();
+                    }
+                  })
+                </script>
+
+              </div>
+
+
+            </div>
+            <div class="row">
+              <!--BestSelling Widget-->
+              <div class="product-list-widget">
+                <h3 class="product-list-title">Best Sellers</h3>
+                <div class="owl-carousel Product_List_Widget" id="Product_List_Widget2">
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/strawberryfruit">
+                            <div class="image">
+                              <img id="119" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/785bd433-af18-476a-b203-a71dc6c1412bstrawberry.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="119" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/strawberryfruit">
+                            <h4 class="title">Strawberry</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-half"></i>
+
+</span>
+
+                            4.5   |   (2)   <a href="http://localhost:3288/strawberryfruit#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="st3245" data-type="">
+                                        <span>
+                                            $10.00
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/strawberryfruit">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/fresh-cut-roses">
+                            <div class="image">
+                              <img id="144" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/1e038d9f-c25b-4cb7-8c93-9b531c27b219roses.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="144" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/fresh-cut-roses">
+                            <h4 class="title">Fresh-Cut Roses</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                            <a href="http://localhost:3288/fresh-cut-roses#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="SKFCR123" data-type="">
+                                        <span>
+                                            $43.00
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/fresh-cut-roses">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/configurable-apple">
+                            <div class="image">
+                              <img id="197" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/e219df9b-9a8b-4565-bfe1-bf80ec8464ebapple.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="197" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/configurable-apple">
+                            <h4 class="title">Apple</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+            <i class="zf-star-full"></i>
+
+</span>
+
+                            5   |   (1)   <a href="http://localhost:3288/configurable-apple#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="apz231" data-type="">
+                                        <span>
+
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/configurable-apple">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="item">
+                    <div class="product-item">
+                      <div class="view-item">
+                        <div class="product-img">
+                          <a href="http://localhost:3288/grapes-fruits">
+                            <div class="image">
+                              <img id="205" class="img-responsive b-lazy" data-src="http://localhost:44762/Data/Media/Catalog/1/250/95bb591f-ff65-44e9-bfb0-eafcae2ff272Black Grapes.jpg" alt="Product" />
+                            </div>
+                          </a>
+                          <button onclick="Product.prototype.GetProductDetails(this)" class="btn-card btn-quick-view btn-bg-secondary hvr-shadow" data-review-state-id="" data-product-is-active="" data-value="205" data-isquickview="true" data-toggle="modal" data-target=".quick-view-popup">Quick View</button>
+                        </div>
+
+                        <div class="product-details">
+                          <a href="http://localhost:3288/grapes-fruits">
+                            <h4 class="title">Grapes</h4>
+                          </a>
+                          <div class="product-rating">
+                    <span class="star-rating">
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+            <i class="zf-star-empty"></i>
+
+</span>
+
+                            <a href="http://localhost:3288/grapes-fruits#scrollReview" id="jumpto-readreviews-productTile">Read reviews</a>
+                          </div>
+                          <div class="price" data-sku="gr990" data-type="">
+                                        <span>
+
+                                        </span>
+
+                          </div>
+                          <div class="item-error-msg">
+                            <p class="error-msg"></p>
+                          </div>
+                          <a href="http://localhost:3288/grapes-fruits">View More Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <script>
+                  $("#Product_List_Widget2").owlCarousel({
+                    autoPlay: false,
+                    navigation: false,
+                    items: 4,
+                    itemsCustom: [
+                      [0, 1],
+                      [320, 1],
+                      [480, 2],
+                      [600, 2],
+                      [768, 2],
+                      [992, 3],
+                      [1200, 4]
+                    ],
+                    navigationText: [
+                      "<i class='zf-arrow-left-big'></i>",
+                      "<i class='zf-arrow-right-big'></i>"
+                    ]
+                  });
+                </script>
+
+                <script>
+                  $(document).ready(function () {
+                    var async = 'False';
+                    if (async == 'True') {
+                      Product.prototype.GetPriceAsync();
+                    }
+                  })
+                </script>
+
+              </div>
+
+
+            </div>
+            <div class="row">
+              <!--BestSelling Widget-->
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="home-categorylist-area"></div>
+                </div>
+              </div>
+                <script>$.ajax({ url: "/Home/WidgetCategoryList?cMSMappingId=" +1+"&displayName=" + 'Category List' + "&typeOfMapping=" + 'PortalMapping' + "&widgetCode=" + 'CategoryList' + "&widgetKey=" + '1992', type: "get" }).done(function (t) { $(".home-categorylist-area").html(t);});</script>
+
+
+
+            </div>
+            <div class="row">
+              <!--Brand Widget-->
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="home-brandlist-area"></div>
+                </div>
+              </div>
+                <script>$.ajax({ url: "/Home/WidgetBrandList?cMSMappingId=" +1+"&displayName=" + 'Brand List' + "&typeOfMapping=" + 'PortalMapping' + "&widgetCode=" + 'BrandList' + "&widgetKey=" + '9657', type: "get" }).done(function (t) { $(".home-brandlist-area").html(t);});</script>
+
+
+            </div>
+            <div class="row">
+              <!--Recently View Product Widget-->
+              <div class="product-list-widget">
+                <div id="recent-view-products" class="recent-view-items">
+                </div>
+                <script type="text/javascript">
+                  var ProductId = $("div[id='layout-product']").attr("data-id");
+                  $.ajax({ url: "/Product/GetRecentViewProducts?productId=" + ProductId, type: "get" }).done(function (t) {
+                    $(".recent-view-items").html(t)
+                    ZnodeBase.prototype.onImageError();
+                  });
+                </script>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--Footer Widgets-->
+  <footer id="layout-footer">
+    <div class="container-fluid" id="footer-content-area"></div>
+      <script>$.ajax({ url: "/Home/Footer", type: "get",footerContext:true }).done(function (t) { $("#footer-content-area").html(t); InitbLazy();});</script>
+  </footer>
+
+</div>
+<script id="tmpl-typeahead-results" type="text/template">
+  <a href="#" class="close"><i class="zf-close close"></i></a>
+  <ul>
+    {{#matches}}
+    <li><a href="http://localhost:3288/Search?searchTerm={{term}}&category={{category}}"><strong>{{product}}</strong> {{suffix}}</a></li>
+    {{/matches}}
+  </ul>
+</script>
+<script id="tmpl-alertmessage" type="text/template">
+  <div id="status-message" class="{{style}} alert alert-info text-center">{{message}}</div>
+</script>
+
+
+<input id="hdnPaymentAppUrl" name="hdnPaymentAppUrl" type="hidden" value="http://localhost:56247/" />
+<input id="hdnWebStoreUrl" name="hdnWebStoreUrl" type="hidden" value="http://localhost:3288" />
+<script src="http://localhost:3288/bundles/CoreJs"></script>
+
+<script src="http://localhost:3288/bundles/CustomJs"></script>
+
+
+
+
+
+<div class="modal fade quick-view-popup" id="quick-view-popup-ipad" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="popup-container modal-dialog">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span id="close-quick-view-popup-ipad" aria-hidden="true"><i class="zf-close"></i></span></button>
+    <div id="quick-view-content">
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="NoCheckboxSelected" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="z-close-circle"></i></button>
+        <h4 class="modal-title">Error!!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please select at least one record.</p>
+      </div>
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button type="button" id="btn-cancel-popup" class="btn-text-icon" data-dismiss="modal"><i class='z-ok'></i>Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="PopUpConfirm" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="z-close-circle"></i></button>
+        <h4 class="modal-title">Confirm Delete?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete the selected record?</p>
+      </div>
+      <div class="modal-footer">
+        <div class="pull-right">
+          <button type='button'  class='btn-text-icon' data-dismiss="modal" onclick="javascript:$('body').removeClass('modal-open');$('body').removeAttr('style'); DynamicGrid.prototype.RedirectToDelete(this)"><i class='z-ok'></i>Ok</button>
+          <button type="button" id="btn-cancel-popup" class="btn-text-icon" data-dismiss="modal"><i class='z-cancel'></i>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="divAddedForCompare" class="modal fade comparepopup" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="compare-product-popup" id="popUp_content">
+  </div>
+</div>
+<button id="btnAddCompare" style="display:none" data-toggle="modal" data-target=".comparepopup">Compare</button>
+</div>
+</html>
+<script>
+  $(window).on("scroll touchmove", function () {
+    $('.header').toggleClass('shrink', $(document).scrollTop() > 0);
+  });
+  var dataLayer = [];
+</script>
+
+
