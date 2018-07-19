@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PlpRoutingModule } from './plp-routing.module';
 import { PlpComponent } from './plp.component';
 
+import { ProductGridTileComponent } from '../productGridTile/productGridTile.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,7 +14,8 @@ import { PlpComponent } from './plp.component';
     PlpRoutingModule
   ],
   declarations: [
-    PlpComponent
+    PlpComponent,
+    ProductGridTileComponent
   ]
 })
 export class PlpModule { }
