@@ -7,6 +7,8 @@ import { PlpComponent } from './plp.component';
 
 import { ProductGridTileComponent } from '../productGridTile/productGridTile.component';
 
+import { ProductService } from './product.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +18,9 @@ import { ProductGridTileComponent } from '../productGridTile/productGridTile.com
   declarations: [
     PlpComponent,
     ProductGridTileComponent
+  ],
+  providers: [
+    ProductService
   ]
 })
 export class PlpModule { }
