@@ -12,6 +12,8 @@ import {finalize} from 'rxjs/operators';
 })
 export class PlpComponent implements OnInit {
 
+  savedResult: any;
+  result: any;
   products: Array<any>;
   isLoading: boolean;
 
@@ -23,7 +25,9 @@ export class PlpComponent implements OnInit {
     this.isLoading = true;
     this.productService.getProductsByCategory({ category: '333' })
       .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((products: Array<any>) => { this.products = products; });
+      .subscribe((res: any) => { this.savedResult = res; this.result = res.products; this.products = res.products.Products; });
+    let junk = 5;
+    junk++;
   }
 
 }

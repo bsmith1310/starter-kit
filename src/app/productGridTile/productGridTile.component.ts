@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { environment } from '@env/environment';
 
@@ -8,6 +8,9 @@ import { environment } from '@env/environment';
   styleUrls: ['./productGridTile.component.scss']
 })
 export class ProductGridTileComponent implements OnInit {
+
+  @Input()
+  product: any;
 
   version: string = environment.version;
 

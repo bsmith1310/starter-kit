@@ -7,7 +7,7 @@
         <div class="image">
 
           <img id="145" class="img-responsive b-lazy"
-               src="http://localhost:44762/Data/Media/Catalog/1/250/e4ac192b-17b4-4820-931f-feb604006d66cashews.jpg"
+               [src]="product.ImageSmallPath"
                alt="Product"/>
         </div>
       </a>
@@ -21,7 +21,7 @@
     </div>
     <div class="product-details">
       <a href="http://localhost:3288/whole-salted-cashews">
-        <h4 class="title">Whole Salted Cashews</h4>
+        <h4 class="title">{{product.Name}}</h4>
       </a>
       <div class="product-rating">
             <span class="star-rating">

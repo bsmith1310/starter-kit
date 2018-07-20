@@ -17,12 +17,12 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProductsByCategory(context: ProductsByCategoryContext): Observable<Array<any>> {
+  getProductsByCategory(context: ProductsByCategoryContext): Observable<any> {
     return this.httpClient
       .cache()
       .get(routes.products(context))
       .pipe(
-        map((body: any) => body.value),
+        map((body: any) => body),
         catchError(() => of('Error, could not load joke :-('))
       );
   }
