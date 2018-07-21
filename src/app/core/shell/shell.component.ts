@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-shell',
@@ -7,8 +7,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShellComponent implements OnInit {
 
-  constructor() { }
+  menu: any;
 
-  ngOnInit() { }
+  constructor() {
+    this.menu = {
+      items: [
+        {
+          name: 'about'
+        },
+        {
+          name: 'categories'
+        },
+        {
+          name: 'home'
+        },
+        {
+          name: 'myhome'
+        },
+        {
+          name: 'myplp3'
+        },
+        {
+          name: 'plp'
+        },
+        {
+          name: 'plp2'
+        },
+        {
+          name: 'storehome'
+        },
+        {
+          name: 'znodeplp'
+        },
+        {
+          name: 'znodehome'
+        }
+      ]
+    };
+  }
+
+  ngOnInit() {
+  }
 
 }

@@ -6,7 +6,7 @@
       <a href="http://localhost:3288/whole-salted-cashews">
         <div class="image">
 
-          <img id="145" class="img-responsive b-lazy"
+          <img id="product.PublishProductId" class="img-responsive b-lazy"
                [src]="product.ImageSmallPath"
                alt="Product"/>
         </div>
@@ -33,7 +33,7 @@
 
 </span>
 
-        5 | (1) <a href="http://localhost:3288/whole-salted-cashews#scrollReview"
+        {{product.Rating}} | ({{product.ProductReviews.length}}) <a href="http://localhost:3288/whole-salted-cashews#scrollReview"
                    id="jumpto-readreviews-productTile">Read reviews</a>
       </div>
       <div class="price" data-sku="SKWSC123" data-type="">

@@ -23,7 +23,7 @@ export class ProductService {
       .get(routes.products(context))
       .pipe(
         map((body: any) => body),
-        catchError(() => of('Error, could not load joke :-('))
+        catchError(() => of('Error, could not get products :-('))
       );
   }
 

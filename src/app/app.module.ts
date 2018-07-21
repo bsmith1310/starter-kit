@@ -14,8 +14,14 @@ import { AboutModule } from './about/about.module';
 import { CategoriesModule } from './categories/categories.module';
 import { LoginModule } from './login/login.module';
 import { PlpModule } from './plp/plp.module';
+import { Plp2Module } from './plp2/plp2.module';
+import { Myplp3Module } from './myplp3/myplp3.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ZnodeHomeModule } from './znodeHome/znodeHome.module';
+import { ZnodePlpModule } from './znode-plp/znode-plp.module';
+import { StoreHomeModule } from './storeHome/storeHome.module';
+import { MyhomeModule } from './myhome/myhome.module';
 
 @NgModule({
   imports: [
@@ -32,7 +38,13 @@ import { AppRoutingModule } from './app-routing.module';
     CategoriesModule,
     LoginModule,
     PlpModule,
-    AppRoutingModule
+    Plp2Module,
+    Myplp3Module,
+    AppRoutingModule,
+    ZnodeHomeModule,
+    ZnodePlpModule,
+    StoreHomeModule,
+    MyhomeModule
   ],
   declarations: [AppComponent],
   providers: [
