@@ -25,8 +25,6 @@ export class PlpComponent implements OnInit {
     this.productService.getProductsByCategory({ category: '333' })
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((res: any) => { this.result = res; this.products = res.Products; });
-    let junk = 5;
-    junk++;
   }
 
 }

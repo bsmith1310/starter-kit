@@ -10,7 +10,8 @@ export const environment = {
   production: false,
   version: env.npm_package_version + '-dev',
   serverUrl: '/api',
-  znodeApiUrl: 'http://localhost:3288',
+  znodeApiUrl: 'http://localhost:44762',
+  znodeWebStoreApiUrl: 'http://localhost:3288',
   defaultLanguage: 'en-US',
   supportedLanguages: [
     'en-US',

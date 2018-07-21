@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Ws1RoutingModule } from './ws1-routing.module';
 import { Ws1Component } from './ws1.component';
 
+import { BannerSliderService } from './bannerSlider.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +16,8 @@ import { Ws1Component } from './ws1.component';
   declarations: [
     Ws1Component
   ],
-  providers: []
+  providers: [
+    BannerSliderService
+  ]
 })
 export class Ws1Module { }

@@ -11,7 +11,14 @@ import { environment } from '@env/environment';
 export class ApiPrefixInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let baseUrl = (request.url.indexOf('jokes') >= 0) ? environment.serverUrl : environment.znodeApiUrl;
+    let baseUrl = '';
+    if (request.url.indexOf('data/media') >= 0) {
+      baseUrl = environment.znodeApiUrl;
+    } if (request.url.indexOf('jokes') >= 0) {
+      baseUrl = environment.serverUrl;
+    } else {
+      baseUrl = environment.znodeWebStoreApiUrl;
+    }
     request = request.clone({ url: baseUrl + request.url });
     return next.handle(request);
   }
