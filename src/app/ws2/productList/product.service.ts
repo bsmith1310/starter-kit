@@ -27,7 +27,7 @@ export class ProductService {
       // SearchTerm: null,
       // FacetGroup: null,
       PageNumber: 1,
-      PageSize: 16,
+      PageSize: 100,
       RefineBy: {},
       Sort: 0,
       LocaleId: 1,
