@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 const routes = {
-  products: (c: Context) => `/angularpoc/bannerslider/${c.id}`
+  slider: (c: Context) => `/angularpoc/bannerslider/${c.id}`
 };
 
 export interface Context {
@@ -20,10 +20,10 @@ export class BannerSliderService {
   getBannerSlider(context: Context): Observable<any> {
     return this.httpClient
       .cache()
-      .get(routes.products(context))
+      .get(routes.slider(context))
       .pipe(
         map((body: any) => body),
-        catchError(() => of('Error, could not get products :-('))
+        catchError(() => of('Error, could not get banner slider :-('))
       );
   }
 

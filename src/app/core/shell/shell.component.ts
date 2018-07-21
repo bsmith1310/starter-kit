@@ -14,11 +14,11 @@ export class ShellComponent implements OnInit {
       items: [
         {
           link: 'ws1',
-          name: 'ws1'
+          name: 'ws1(bannerslider)'
         },
         {
           link: 'ws2',
-          name: 'ws2'
+          name: 'ws2(categories)'
         },
         {
           link: 'ws3',
@@ -54,7 +54,7 @@ export class ShellComponent implements OnInit {
         },
         {
           link: 'plp',
-          name: 'Plp'
+          name: 'Plp (GOOD PRODUCT GRID DEMO)'
         },
         {
           link: 'plp2',

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment } from '@env/environment';
-
 @Component({
   selector: 'app-categories',
   templateUrl: './ws3.component.html',
@@ -9,11 +7,7 @@ import { environment } from '@env/environment';
 })
 export class Ws3Component implements OnInit {
 
-  result: any;
-  products: Array<any>;
   isLoading: boolean;
-
-  version: string = environment.version;
 
   constructor() { }
 

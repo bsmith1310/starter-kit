@@ -12,9 +12,10 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let baseUrl = '';
-    if (request.url.indexOf('data/media') >= 0) {
+    if (request.url.indexOf('data/media') >= 0 ||
+      request.url.indexOf('catalog/getcategorytree') >= 0) {
       baseUrl = environment.znodeApiUrl;
-    } if (request.url.indexOf('jokes') >= 0) {
+    } else if (request.url.indexOf('jokes') >= 0) {
       baseUrl = environment.serverUrl;
     } else {
       baseUrl = environment.znodeWebStoreApiUrl;

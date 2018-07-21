@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment } from '@env/environment';
+import { CategoryListService } from './categoryList.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-categories',
@@ -9,16 +10,17 @@ import { environment } from '@env/environment';
 })
 export class Ws2Component implements OnInit {
 
-  result: any;
-  products: Array<any>;
   isLoading: boolean;
+  result: any;
+  categoryList: any;
 
-  version: string = environment.version;
-
-  constructor() { }
+  constructor(private categoryListService: CategoryListService) { }
 
   ngOnInit() {
     this.isLoading = true;
+    this.categoryListService.getCategoryList()
+      .pipe(finalize(() => { this.isLoading = false; }))
+      .subscribe((res: any) => { this.result = res; this.categoryList = res.Tree.children; });
   }
 
 }

@@ -16,5 +16,8 @@ export const environment = {
   supportedLanguages: [
     'en-US',
     'fr-FR'
-  ]
+  ],
+  storeSettings: {
+    catelogId: 3
+  }
 };

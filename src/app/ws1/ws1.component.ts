@@ -21,7 +21,7 @@ export class Ws1Component implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.bannerSliderService.getBannerSlider({ id: '333' })
+    this.bannerSliderService.getBannerSlider({ id: 'TODO-bannerId' })
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((res: any) => { this.slider = res; });
   }

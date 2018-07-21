@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Ws2RoutingModule } from './ws2-routing.module';
 import { Ws2Component } from './ws2.component';
 
+import { CategoryListService } from './categoryList.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +16,8 @@ import { Ws2Component } from './ws2.component';
   declarations: [
     Ws2Component
   ],
-  providers: []
+  providers: [
+    CategoryListService
+  ]
 })
 export class Ws2Module { }

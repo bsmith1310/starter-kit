@@ -4,7 +4,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { CoreModule, HttpCacheService } from '@app/core';
 import { ProductService } from './product.service';
 
-describe('BannerSliderService', () => {
+describe('CategoryListService', () => {
   let quoteService: ProductService;
   let httpMock: HttpTestingController;
 

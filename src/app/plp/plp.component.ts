@@ -22,7 +22,7 @@ export class PlpComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.productService.getProductsByCategory({ category: '333' })
+    this.productService.getProductsByCategory({ category: 'TODO-categoryId' })
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((res: any) => { this.result = res; this.products = res.Products; });
   }

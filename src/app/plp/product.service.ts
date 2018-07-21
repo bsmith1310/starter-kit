@@ -4,10 +4,10 @@ import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 const routes = {
-  products: (c: ProductsByCategoryContext) => `/product/bycategory/${c.category}`
+  categories: (c: Context) => `/product/bycategory/${c.category}`
 };
 
-export interface ProductsByCategoryContext {
+export interface Context {
   // The quote's category: 'dev', 'explicit'...
   category: string;
 }
@@ -17,13 +17,13 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProductsByCategory(context: ProductsByCategoryContext): Observable<any> {
+  getProductsByCategory(context: Context): Observable<any> {
     return this.httpClient
       .cache()
-      .get(routes.products(context))
+      .get(routes.categories(context))
       .pipe(
         map((body: any) => body),
-        catchError(() => of('Error, could not get products :-('))
+        catchError(() => of('Error, could not get categories :-('))
       );
   }
 
