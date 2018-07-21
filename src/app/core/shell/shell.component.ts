@@ -13,34 +13,64 @@ export class ShellComponent implements OnInit {
     this.menu = {
       items: [
         {
-          name: 'about'
+          link: 'ws1',
+          name: 'ws1'
         },
         {
-          name: 'categories'
+          link: 'ws2',
+          name: 'ws2'
         },
         {
-          name: 'home'
+          link: 'ws3',
+          name: 'ws3'
         },
         {
-          name: 'myhome'
+          link: 'ws4',
+          name: 'ws4'
         },
         {
-          name: 'myplp3'
+          link: 'ws5',
+          name: 'ws5'
         },
         {
-          name: 'plp'
+          link: 'about',
+          name: 'About'
         },
         {
-          name: 'plp2'
+          link: 'categories',
+          name: 'Categories'
         },
         {
-          name: 'storehome'
+          link: 'home',
+          name: 'Home'
         },
         {
-          name: 'znodeplp'
+          link: 'myhome',
+          name: 'Myhome'
         },
         {
-          name: 'znodehome'
+          link: 'myplp3',
+          name: 'Myplp3'
+        },
+        {
+          link: 'plp',
+          name: 'Plp'
+        },
+        {
+          link: 'plp2',
+          name: 'Plp2'
+        },
+        {
+          link: 'storehome',
+          name: 'Storehome'
+        },
+        {
+          link: 'znodeplp',
+          name: 'Znodeplp'
+        },
+        {
+          link: 'znodehome',
+          name: 'Znodehome'
         }
       ]
     };

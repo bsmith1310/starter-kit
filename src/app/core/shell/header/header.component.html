@@ -8,7 +8,7 @@
     <div id="navbar-menu" class="collapse navbar-collapse float-xs-none" [ngbCollapse]="menuHidden">
       <div class="navbar-nav">
         <div *ngFor="let item of menu.items">
-          <a class="nav-item nav-link text-lowercase" routerLink="/{{item.name}}" routerLinkActive="active">
+          <a class="nav-item nav-link text-lowercase" routerLink="/{{item.link}}" routerLinkActive="active">
             <i class="fas fa-window-maximize"></i>
             <span translate>{{item.name}}</span>
           </a>

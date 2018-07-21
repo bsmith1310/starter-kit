@@ -23,6 +23,13 @@ import { ZnodePlpModule } from './znode-plp/znode-plp.module';
 import { StoreHomeModule } from './storeHome/storeHome.module';
 import { MyhomeModule } from './myhome/myhome.module';
 
+// Import Workspace Pages:
+import { Ws1Module } from './ws1/ws1.module';
+import { Ws2Module } from './ws2/ws2.module';
+import { Ws3Module } from './ws3/ws3.module';
+import { Ws4Module } from './ws4/ws4.module';
+import { Ws5Module } from './ws5/ws5.module';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -40,11 +47,16 @@ import { MyhomeModule } from './myhome/myhome.module';
     PlpModule,
     Plp2Module,
     Myplp3Module,
-    AppRoutingModule,
     ZnodeHomeModule,
     ZnodePlpModule,
     StoreHomeModule,
-    MyhomeModule
+    MyhomeModule,
+    Ws1Module,
+    Ws2Module,
+    Ws3Module,
+    Ws4Module,
+    Ws5Module,
+    AppRoutingModule
   ],
   declarations: [AppComponent],
   providers: [
