@@ -40,7 +40,7 @@ export class CategoryListService {
       .cache()
       .post(routes.catagories(), data)
       .pipe(
-        map((body: any) => body),
+        map((body: any) => environment.storeSettings.categories),
         catchError(() => of('Error, could not get productsByCategoryId :-('))
       );
   }

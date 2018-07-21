@@ -19,8 +19,8 @@ export class ProductService {
 
   getProductsByCategory(context: Context): Observable<any> {
     const data = {
-      Category: 'Nuts',
-      CategoryId: 39,
+      // Category: 'Nuts',
+      CategoryId: context.categoryId,
       // Keyword: null,
       // InnerSearchKeywords: null,
       // FacetValue: null,

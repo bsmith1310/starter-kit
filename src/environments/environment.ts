@@ -18,6 +18,7 @@ export const environment = {
     'fr-FR'
   ],
   storeSettings: {
-    catelogId: 3
+    catelogId: 3,
+    categories: [39, 40, 36]
   }
 };

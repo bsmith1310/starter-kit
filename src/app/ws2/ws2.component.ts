@@ -12,7 +12,7 @@ export class Ws2Component implements OnInit {
 
   isLoading: boolean;
   result: any;
-  categoryList: any;
+  categoryIds: any;
 
   constructor(private categoryListService: CategoryListService) { }
 
@@ -20,7 +20,7 @@ export class Ws2Component implements OnInit {
     this.isLoading = true;
     this.categoryListService.getCategoryList()
       .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((res: any) => { this.result = res; this.categoryList = res.Tree.children; });
+      .subscribe((res: any) => { this.result = res; this.categoryIds = res; });
   }
 
 }
