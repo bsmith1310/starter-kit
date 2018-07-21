@@ -6,7 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
 
 const routes = {
-  categories: () => `/catalog/getcategorytree`
+  catagories: () => `/catalog/getcategorytree`
 };
 
 @Injectable()
@@ -38,10 +38,10 @@ export class CategoryListService {
     };
     return this.httpClient
       .cache()
-      .post(routes.categories(), data)
+      .post(routes.catagories(), data)
       .pipe(
         map((body: any) => body),
-        catchError(() => of('Error, could not get categories :-('))
+        catchError(() => of('Error, could not get productsByCategoryId :-('))
       );
   }
 }

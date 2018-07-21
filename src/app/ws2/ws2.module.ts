@@ -5,7 +5,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Ws2RoutingModule } from './ws2-routing.module';
 import { Ws2Component } from './ws2.component';
 
+import { ProductListComponent } from './productList/productList.component';
+
 import { CategoryListService } from './categoryList.service';
+import { ProductService } from './productList/product.service';
 
 @NgModule({
   imports: [
@@ -14,10 +17,12 @@ import { CategoryListService } from './categoryList.service';
     Ws2RoutingModule
   ],
   declarations: [
-    Ws2Component
+    Ws2Component,
+    ProductListComponent
   ],
   providers: [
-    CategoryListService
+    CategoryListService,
+    ProductService
   ]
 })
 export class Ws2Module { }

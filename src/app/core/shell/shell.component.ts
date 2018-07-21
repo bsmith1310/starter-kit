@@ -18,7 +18,7 @@ export class ShellComponent implements OnInit {
         },
         {
           link: 'ws2',
-          name: 'ws2(categories)'
+          name: 'ws2(productsByCategoryId)'
         },
         {
           link: 'ws3',
@@ -37,7 +37,7 @@ export class ShellComponent implements OnInit {
           name: 'About'
         },
         {
-          link: 'categories',
+          link: 'productsByCategoryId',
           name: 'Categories'
         },
         {
@@ -51,10 +51,6 @@ export class ShellComponent implements OnInit {
         {
           link: 'myplp3',
           name: 'Myplp3'
-        },
-        {
-          link: 'plp',
-          name: 'Plp (GOOD PRODUCT GRID DEMO)'
         },
         {
           link: 'plp2',

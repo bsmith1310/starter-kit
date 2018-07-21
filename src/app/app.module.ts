@@ -13,7 +13,6 @@ import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
 import { CategoriesModule } from './categories/categories.module';
 import { LoginModule } from './login/login.module';
-import { PlpModule } from './plp/plp.module';
 import { Plp2Module } from './plp2/plp2.module';
 import { Myplp3Module } from './myplp3/myplp3.module';
 import { AppComponent } from './app.component';
@@ -44,7 +43,6 @@ import { Ws5Module } from './ws5/ws5.module';
     AboutModule,
     CategoriesModule,
     LoginModule,
-    PlpModule,
     Plp2Module,
     Myplp3Module,
     ZnodeHomeModule,

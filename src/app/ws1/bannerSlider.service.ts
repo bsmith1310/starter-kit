@@ -8,7 +8,7 @@ const routes = {
 };
 
 export interface Context {
-  // The quote's category: 'dev', 'explicit'...
+  // The quote's categoryId: 'dev', 'explicit'...
   id: string;
 }
 

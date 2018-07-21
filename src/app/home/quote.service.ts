@@ -8,7 +8,7 @@ const routes = {
 };
 
 export interface RandomQuoteContext {
-  // The quote's category: 'dev', 'explicit'...
+  // The quote's categoryId: 'dev', 'explicit'...
   category: string;
 }
 
