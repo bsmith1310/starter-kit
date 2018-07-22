@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ShellComponent } from './shell/shell.component';
 import { HeaderComponent } from './shell/header/header.component';
+import { HeaderRow2Component } from './shell/header-row-2/header-row-2.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { AuthenticationService } from './authentication/authentication.service';
 import { AuthenticationGuard } from './authentication/authentication.guard';
@@ -27,6 +28,7 @@ import { CacheInterceptor } from './http/cache.interceptor';
   ],
   declarations: [
     HeaderComponent,
+    HeaderRow2Component,
     ShellComponent
   ],
   providers: [
