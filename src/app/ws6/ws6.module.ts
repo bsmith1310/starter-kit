@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ZnodeHomeRoutingModule } from './znodeHome-routing.module';
-import { ZnodeHomeComponent } from './znodeHome.component';
+import { Ws6RoutingModule } from './ws6-routing.module';
+import { Ws6Component } from './ws6.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-    ZnodeHomeRoutingModule
+    Ws6RoutingModule
   ],
   declarations: [
-    ZnodeHomeComponent
+    Ws6Component
   ],
   providers: []
 })
-export class ZnodeHomeModule { }
+export class Ws6Module { }

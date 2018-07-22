@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { Myplp3RoutingModule } from './myplp3-routing.module';
-import { Myplp3Component } from './myplp3.component';
+import { Ws7RoutingModule } from './ws7-routing.module';
+import { Ws7Component } from './ws7.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-    Myplp3RoutingModule
+    Ws7RoutingModule
   ],
   declarations: [
-    Myplp3Component
+    Ws7Component
   ],
   providers: []
 })
-export class Myplp3Module { }
+export class Ws7Module { }

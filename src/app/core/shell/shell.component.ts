@@ -14,15 +14,15 @@ export class ShellComponent implements OnInit {
       items: [
         {
           link: 'ws1',
-          name: 'ws1(bannerslider)'
+          name: 'ws1(banner)'
         },
         {
           link: 'ws2',
-          name: 'ws2(productsByCategoryId)'
+          name: 'ws2(products)'
         },
         {
           link: 'ws3',
-          name: 'ws3'
+          name: 'ws3(gallery)'
         },
         {
           link: 'ws4',
@@ -33,41 +33,29 @@ export class ShellComponent implements OnInit {
           name: 'ws5'
         },
         {
+          link: 'ws6',
+          name: 'ws6'
+        },
+        {
+          link: 'ws7',
+          name: 'ws7'
+        },
+        {
+          link: 'ws8',
+          name: 'ws8'
+        },
+        {
           link: 'about',
           name: 'About'
         },
         {
-          link: 'productsByCategoryId',
-          name: 'Categories'
+          link: 'categories',
+          name: 'direct B3 hackish copy'
         },
         {
           link: 'home',
           name: 'Home'
         },
-        {
-          link: 'myhome',
-          name: 'Myhome'
-        },
-        {
-          link: 'myplp3',
-          name: 'Myplp3'
-        },
-        {
-          link: 'plp2',
-          name: 'Plp2'
-        },
-        {
-          link: 'storehome',
-          name: 'Storehome'
-        },
-        {
-          link: 'znodeplp',
-          name: 'Znodeplp'
-        },
-        {
-          link: 'znodehome',
-          name: 'Znodehome'
-        }
       ]
     };
   }

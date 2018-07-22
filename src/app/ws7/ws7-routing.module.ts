@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { Route, extract } from '@app/core';
-import { Plp2Component } from './plp2.component';
+import { Ws7Component } from './ws7.component';
 
 const routes: Routes = [
   Route.withShell([
-    { path: 'plp2', component: Plp2Component, data: { title: extract('Plp2') } }
+    { path: 'ws7', component: Ws7Component, data: { title: extract('ws7') } }
   ])
 ];
 
@@ -15,4 +15,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-export class Plp2RoutingModule { }
+export class Ws7RoutingModule { }

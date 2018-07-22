@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { StoreHomeRoutingModule } from './storeHome-routing.module';
-import { StoreHomeComponent } from './storeHome.component';
+import { Ws8RoutingModule } from './ws8-routing.module';
+import { Ws8Component } from './ws8.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-    StoreHomeRoutingModule
+    Ws8RoutingModule
   ],
   declarations: [
-    StoreHomeComponent
+    Ws8Component
   ],
   providers: []
 })
-export class StoreHomeModule { }
+export class Ws8Module { }

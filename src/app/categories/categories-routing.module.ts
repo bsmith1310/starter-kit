@@ -6,7 +6,7 @@ import { CategoriesComponent } from './categories.component';
 
 const routes: Routes = [
   Route.withShell([
-    { path: 'productsByCategoryId', component: CategoriesComponent, data: { title: extract('Categories') } }
+    { path: 'categories', component: CategoriesComponent, data: { title: extract('Categories') } }
   ])
 ];
 
