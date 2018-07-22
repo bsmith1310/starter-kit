@@ -14,4 +14,7 @@ export class ProductGridTileComponent implements OnInit {
 
   ngOnInit() { }
 
+  getThumbnailUrl(): string {
+    return this.product.ImageSmallPath.replace('/250/', '/400/');
+  }
 }

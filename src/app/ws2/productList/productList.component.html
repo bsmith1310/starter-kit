@@ -1,1 +1,7 @@
-<app-product-grid-tile class="grid" *ngFor="let product of products" [product]="product"></app-product-grid-tile>
+<section class="gallery-block compact-gallery">
+  <div class="container">
+    <div class="row no-gutters">
+      <app-product-grid-tile class="col-md-6 col-lg-4 item zoom-on-hover" *ngFor="let product of products" [product]="product"></app-product-grid-tile>
+    </div>
+  </div>
+</section>
