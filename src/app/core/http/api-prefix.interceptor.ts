@@ -12,17 +12,25 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let baseUrl = '';
-    if (request.url.indexOf('data/media') >= 0 ||
-      request.url.indexOf('catalog/getcategorytree') >= 0 ||
-      request.url.indexOf('search/fulltextsearch') >= 0) {
-      baseUrl = environment.znodeApiUrl;
-    } else if (request.url.indexOf('jokes') >= 0) {
+    if (request.url.indexOf('jokes') >= 0) {
       baseUrl = environment.serverUrl;
-    } else {
+    } else if (this.isWebStoreResource(request.url)) {
       baseUrl = environment.znodeWebStoreApiUrl;
+    } else {
+      baseUrl = environment.znodeApiUrl;
     }
     request = request.clone({ url: baseUrl + request.url });
     return next.handle(request);
+  }
+
+  isWebStoreResource(url: string): boolean {
+    let found = false;
+    environment.znodeWebStoreApiResources.forEach((resource) => {
+      if (url.indexOf(resource) >= 0) {
+        found = true;
+      }
+    });
+    return found;
   }
 
 }
