@@ -3,6 +3,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } fr
 import { Observable, Subscriber } from 'rxjs';
 
 import { HttpCacheService } from './http-cache.service';
+import {environment} from '@env/environment';
 
 /**
  * Caches HTTP requests.
@@ -29,12 +30,13 @@ export class CacheInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (request.method !== 'GET') {
+    if (!this.isCacheable(request)) {
       return next.handle(request);
     }
 
     return new Observable((subscriber: Subscriber<HttpEvent<any>>) => {
-      const cachedData = this.forceUpdate ? null : this.httpCacheService.getCacheData(request.urlWithParams);
+      const cacheKey = request.urlWithParams + JSON.stringify(request.body);
+      const cachedData = this.forceUpdate ? null : this.httpCacheService.getCacheData(cacheKey);
       if (cachedData !== null) {
         // Create new response to avoid side-effects
         subscriber.next(new HttpResponse(cachedData as Object));
@@ -44,7 +46,7 @@ export class CacheInterceptor implements HttpInterceptor {
           .subscribe(
             event => {
               if (event instanceof HttpResponse) {
-                this.httpCacheService.setCacheData(request.urlWithParams, event);
+                this.httpCacheService.setCacheData(cacheKey, event);
               }
               subscriber.next(event);
             },
@@ -53,6 +55,19 @@ export class CacheInterceptor implements HttpInterceptor {
           );
       }
     });
+  }
+
+  isCacheable(request: HttpRequest<any>): boolean {
+    if (request.method === 'GET') {
+      return true;
+    }
+    let cacheable = false;
+    environment.znodeWebStoreApiCacheablePosts.forEach((resource) => {
+      if (request.url.indexOf(resource) >= 0) {
+        cacheable = true;
+      }
+    });
+    return cacheable;
   }
 
 }

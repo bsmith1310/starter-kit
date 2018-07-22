@@ -17,6 +17,10 @@ export const environment = {
     'angularpoc/bannerslider',
     'headeritems'
   ],
+  znodeWebStoreApiCacheablePosts: [ // all GET requests to Znode are assumed to be cacheable,
+                                    // POSTs can also be cached by adding to this list
+    'search/fulltextsearch'
+  ],
   defaultLanguage: 'en-US',
   supportedLanguages: [
     'en-US',
