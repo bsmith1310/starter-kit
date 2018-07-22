@@ -14,6 +14,7 @@ export class Ws2Component implements OnInit {
   result: any;
   headerItems: any;
   categories: any;
+  selectedCategory: any = null;
 
   constructor(private headerItemsService: HeaderItemsService) { }
 
@@ -24,4 +25,7 @@ export class Ws2Component implements OnInit {
       .subscribe((res: any) => { this.result = res; this.headerItems = res; this.categories = res.Categories; });
   }
 
+  onSelectedCategoryChanged(category: any) {
+    this.selectedCategory = category;
+  }
 }

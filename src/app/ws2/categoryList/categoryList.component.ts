@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-category-list',
@@ -8,7 +8,9 @@ import { Component, Input, Output, OnInit } from '@angular/core';
 export class CategoryListComponent implements OnInit {
 
   @Input() categories: any;
-  @Output() selectedCategory: any;
+  @Output() onSelectedCategory = new EventEmitter<any>();
+
+  selectedCategory: any;
 
   isLoading: boolean;
 
@@ -21,6 +23,7 @@ export class CategoryListComponent implements OnInit {
 
   selectCategory(category: any) {
     this.selectedCategory = category;
+    this.onSelectedCategory.emit(category);
   }
 
 }
