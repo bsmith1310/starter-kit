@@ -8,7 +8,7 @@ import { Component, Input, Output, OnInit } from '@angular/core';
 export class CategoryListComponent implements OnInit {
 
   @Input() categories: any;
-  @Output() categoryId: any;
+  @Output() selectedCategory: any;
 
   isLoading: boolean;
 
@@ -18,5 +18,9 @@ export class CategoryListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
+
+  selectCategory(category: any) {
+    this.selectedCategory = category;
+  }
 
 }
