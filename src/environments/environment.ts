@@ -14,7 +14,8 @@ export const environment = {
   znodeWebStoreApiUrl: 'http://localhost:3288',
   znodeWebStoreApiResources: [ // all resources fetched from Znode are assumed to be on API (ex: 44762),
                                // unless on this list and assumed to be on WebStore (ex: 3288)
-    'angularpoc/bannerslider'
+    'angularpoc/bannerslider',
+    'headeritems'
   ],
   defaultLanguage: 'en-US',
   supportedLanguages: [

@@ -1,5 +1,5 @@
 <h1>ws2</h1>
-<div *ngFor="let categoryId of categoryIds">
-  <h2>{{categoryId}}</h2>
-  <app-product-list [categoryId]="categoryId"></app-product-list>
+<div *ngFor="let category of categories">
+  <h2>{{category.CategoryName}}</h2>
+  <app-product-list [categoryId]="category.CategoryId"></app-product-list>
 </div>

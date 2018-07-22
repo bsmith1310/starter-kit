@@ -7,7 +7,7 @@ import { Ws2Component } from './ws2.component';
 
 import { ProductListComponent } from './productList/productList.component';
 
-import { CategoryListService } from './categoryList.service';
+import { HeaderItemsService } from './headerItems.service';
 import { ProductService } from './productList/product.service';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { ProductService } from './productList/product.service';
     ProductListComponent
   ],
   providers: [
-    CategoryListService,
+    HeaderItemsService,
     ProductService
   ]
 })

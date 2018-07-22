@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CategoryListService } from './categoryList.service';
+import { HeaderItemsService } from './headerItems.service';
 import { finalize } from 'rxjs/operators';
 
 @Component({
@@ -12,15 +12,16 @@ export class Ws2Component implements OnInit {
 
   isLoading: boolean;
   result: any;
-  categoryIds: any;
+  headerItems: any;
+  categories: any;
 
-  constructor(private categoryListService: CategoryListService) { }
+  constructor(private headerItemsService: HeaderItemsService) { }
 
   ngOnInit() {
     this.isLoading = true;
-    this.categoryListService.getCategoryList()
+    this.headerItemsService.getHeaderItems()
       .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((res: any) => { this.result = res; this.categoryIds = res; });
+      .subscribe((res: any) => { this.result = res; this.headerItems = res; this.categories = res.Categories; });
   }
 
 }
