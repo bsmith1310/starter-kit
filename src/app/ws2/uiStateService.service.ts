@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class UiStateServiceService {
@@ -7,15 +7,14 @@ export class UiStateServiceService {
   public filterArgs: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor() {
-    this.selectedCategory.subscribe( value => {
-      let filterArgs = null;
-      if (this.selectedCategory.getValue() !== null) {
-        filterArgs = {
-          CategoryName: this.selectedCategory.getValue().CategoryName,
-          Name: ''
-        };
-      }
-      this.filterArgs.next(filterArgs);
+    this.selectedCategory.subscribe(value => {
+      const categoryName = (this.selectedCategory.getValue() !== null) ?
+        this.selectedCategory.getValue().CategoryName : '';
+      this.filterArgs.next({
+        CategoryName: categoryName,
+        LocaleId: 1,
+        Name: ''
+      });
     });
   }
 }

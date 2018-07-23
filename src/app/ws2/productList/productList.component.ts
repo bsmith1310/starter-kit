@@ -13,11 +13,11 @@ import {
     trigger('flyInOut', [
       state('in', style({transform: 'translateX(0)'})),
       transition('void => *', [
-        style({transform: 'translateX(-100%)'}),
-        animate(100)
+        style({opacity: 0.5, transform: 'translateX(-100%)'}),
+        animate(1000)
       ]),
       transition('* => void', [
-        animate(100, style({transform: 'translateX(100%)'}))
+        animate(1000, style({opacity: 0.5, transform: 'translateX(100%)'}))
       ])
     ])
   ],

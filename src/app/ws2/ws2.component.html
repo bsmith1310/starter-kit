@@ -1,7 +1,6 @@
 <div>
   <div class="noselect">
-    <app-category-list [categories]="categories"
-                       (onSelectedCategory)="onSelectedCategoryChanged($event)"></app-category-list>
+    <app-category-list [categories]="categories"></app-category-list>
     <div>
       <h1 style="color: dodgerblue">
         <span *ngIf="selectedCategory">{{selectedCategory.CategoryName}}</span>

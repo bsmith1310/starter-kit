@@ -1,7 +1,13 @@
 <section class="gallery-block compact-gallery">
   <div class="container">
     <div class="row no-gutters">
-      <app-product-grid-tile class="col-xs-4 col-sm-4 col-md-3 col-lg-2 item zoom-on-hover" *ngFor="let product of products | myfilter:filterArgs" [product]="product"></app-product-grid-tile>
+      <app-product-grid-tile class="col-xs-4 col-sm-4 col-md-3 col-lg-2 item zoom-on-hover"
+                             *ngFor="let product of products | myfilter:filterArgs"
+                             [product]="product"></app-product-grid-tile>
+      <!--<app-product-grid-tile class="col-xs-4 col-sm-4 col-md-3 col-lg-2 item zoom-on-hover"-->
+                             <!--*ngFor="let product of products | myfilter:filterArgs"-->
+                             <!--[@flyInOut]="product.state"-->
+                             <!--[product]="product"></app-product-grid-tile>-->
     </div>
   </div>
 </section>

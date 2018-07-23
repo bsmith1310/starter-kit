@@ -12,31 +12,33 @@ export class MyFilterPipe implements PipeTransform {
     // filter items array, items which match and return true will be
     // kept, false will be filtered out
     for (let key in filter) {
-      console.log(key);
+      //console.log(key);
     }
 
     if (filter.CategoryName && filter.CategoryName.length > 0) {
       items = items.filter(item => {
-        return this.matches(item.CategoryName, filter.CategoryName);
+        return this.contains(item.CategoryName, filter.CategoryName);
       });
     }
 
     if (filter.Name && filter.Name.length > 0) {
       items = items.filter(item => {
-        return this.matches(item.Name, filter.Name);
+        return this.contains(item.Name, filter.Name);
       });
     }
 
+    items = items.filter(item => {
+      return this.isExactly(item.LocaleId, filter.LocaleId);
+    });
+
     return items;
-    //
-    // return items.filter(item => {
-    //   return this.matches(item.CategoryName, filter.CategoryName) ||
-    //     this.matches(item.Name, filter.Name);
-    // });
   }
 
-  matches(itemValue: any, filterCriteria: any): boolean {
+  contains(itemValue: any, filterCriteria: any): boolean {
     return itemValue.indexOf(filterCriteria) !== -1;
-    // return true;
+  }
+
+  isExactly(itemValue: any, filterCriteria: any): boolean {
+    return itemValue === filterCriteria;
   }
 }

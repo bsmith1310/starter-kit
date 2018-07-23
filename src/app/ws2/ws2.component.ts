@@ -35,7 +35,6 @@ export class Ws2Component implements OnInit {
         this.result = res;
         this.headerItems = res;
         this.categories = res.Categories;
-        this.onSelectedCategoryChanged(this.categories[0]);
       });
     this.productService.getAllProducts({categoryId: 'UNUSED'})
       .pipe(finalize(() => {
@@ -51,9 +50,5 @@ export class Ws2Component implements OnInit {
     this.uiStateService.filterArgs.subscribe(value => {
       this.filterArgs = value;
     });
-  }
-
-  onSelectedCategoryChanged(category: any) {
-    this.uiStateService.selectedCategory.next(category);
   }
 }
