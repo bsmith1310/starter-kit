@@ -1,1 +1,9 @@
-<div *ngFor="let sliderBanner of slider.SliderBanners"> <img src="http://localhost:44762/data/media/{{sliderBanner.MediaPath}}"></div>
+<div>
+  <div style="position: relative;" class="bannerwrapper" *ngFor="let sliderBanner of slider.SliderBanners">
+    <h3>BannerId: {{sliderBanner.SliderBannerId}}</h3>
+    <div class="bannercontainer">
+      <img src="http://localhost:44762/data/media/{{sliderBanner.MediaPath}}">
+      <div class="widgetcontent" [innerHtml]="sliderBanner.Description"></div>
+    </div>
+  </div>
+</div>
