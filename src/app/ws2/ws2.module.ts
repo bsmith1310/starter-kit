@@ -15,7 +15,7 @@ import { ProductListComponent } from './productList/productList.component';
 import { MyFilterPipe } from './productList/MyFilterPipe';
 
 import { HeaderItemsService } from './headerItems.service';
-import { ProductService } from './productList/product.service';
+import { ProductService } from './product.service';
 
 @NgModule({
   imports: [

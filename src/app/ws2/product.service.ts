@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { environment } from '@env/environment';
+import { environment } from '../../environments/environment';
 
 const routes = {
   productsByCategoryId: (c: Context) => `/search/fulltextsearch`

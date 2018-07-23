@@ -4,7 +4,7 @@
                        (onSelectedCategory)="onSelectedCategoryChanged($event)"></app-category-list>
     <div *ngIf="selectedCategory !== null">
       <h1 style="color: dodgerblue">{{selectedCategory.CategoryName}}</h1>
-      <app-product-list [categoryId]="selectedCategory.CategoryId" [filterArgs]="filterArgs"></app-product-list>
+      <app-product-list [categoryId]="selectedCategory.CategoryId" [filterArgs]="filterArgs" [products]="products"></app-product-list>
     </div>
     <!--<div *ngFor="let category of categories">-->
     <!--<h2>OLD: {{category.CategoryName}}</h2>-->
