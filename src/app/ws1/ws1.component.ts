@@ -13,6 +13,7 @@ import {finalize} from 'rxjs/operators';
 export class Ws1Component implements OnInit {
 
   slider: any;
+  sliders: any;
   isLoading: boolean;
 
   version: string = environment.version;
@@ -24,6 +25,9 @@ export class Ws1Component implements OnInit {
     this.bannerSliderService.getBannerSlider({ id: 'TODO-bannerId' })
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((res: any) => { this.slider = res; });
+    this.bannerSliderService.getBannerSliders()
+      .pipe(finalize(() => { this.isLoading = false; }))
+      .subscribe((res: any) => { this.sliders = res; });
   }
 
 }
