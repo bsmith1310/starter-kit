@@ -16,6 +16,7 @@ import { MyFilterPipe } from './productList/MyFilterPipe';
 
 import { HeaderItemsService } from './headerItems.service';
 import { ProductService } from './product.service';
+import { UiStateServiceService } from './uiStateService.service';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { ProductService } from './product.service';
   ],
   providers: [
     HeaderItemsService,
-    ProductService
+    ProductService,
+    UiStateServiceService
   ]
 })
 export class Ws2Module { }

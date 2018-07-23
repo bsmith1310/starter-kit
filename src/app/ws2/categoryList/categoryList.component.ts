@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
+import { UiStateServiceService } from '../uiStateService.service';
+
 @Component({
   selector: 'app-category-list',
   templateUrl: './categoryList.component.html',
@@ -8,22 +10,20 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 export class CategoryListComponent implements OnInit {
 
   @Input() categories: any;
-  @Output() onSelectedCategory = new EventEmitter<any>();
-
-  selectedCategory: any;
 
   isLoading: boolean;
+  selectedCategory: any = null;
 
-  result: any;
-  products: Array<any>;
-
-  constructor() { }
+  constructor(private uiStateService: UiStateServiceService) {
+    this.uiStateService.selectedCategory.subscribe( value => {
+      this.selectedCategory = value;
+    });
+  }
 
   ngOnInit() { }
 
   selectCategory(category: any) {
-    this.selectedCategory = category;
-    this.onSelectedCategory.emit(category);
+    this.uiStateService.selectedCategory.next(category);
   }
 
   isSelected(category: any): boolean {
