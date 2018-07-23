@@ -1,5 +1,4 @@
 <section class="gallery-block compact-gallery">
-  <h3>Product list for category: {{categoryId}}</h3>
   <div class="container">
     <div class="row no-gutters">
       <app-product-grid-tile class="col-xs-4 col-sm-4 col-md-3 col-lg-2 item zoom-on-hover" *ngFor="let product of products | myfilter:filterArgs" [product]="product"></app-product-grid-tile>
