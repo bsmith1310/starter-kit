@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { Ws2RoutingModule } from './ws2-routing.module';
 import { Ws2Component } from './ws2.component';
 
@@ -16,6 +19,8 @@ import { ProductService } from './productList/product.service';
 
 @NgModule({
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     TranslateModule,
     Ws2RoutingModule

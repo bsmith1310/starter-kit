@@ -1,11 +1,14 @@
-<div class="noselect">
-<app-category-list [categories]="categories" (onSelectedCategory)="onSelectedCategoryChanged($event)"></app-category-list>
-<div *ngIf="selectedCategory !== null">
-  <h1 style="color: dodgerblue">{{selectedCategory.CategoryName}}</h1>
-  <app-product-list [categoryId]="selectedCategory.CategoryId" [filterArgs]="filterArgs"></app-product-list>
-</div>
-<!--<div *ngFor="let category of categories">-->
-  <!--<h2>OLD: {{category.CategoryName}}</h2>-->
-  <!--<app-product-list [categoryId]="category.CategoryId"></app-product-list>-->
-<!--</div>-->
+<div>
+  <div class="noselect">
+    <app-category-list [categories]="categories"
+                       (onSelectedCategory)="onSelectedCategoryChanged($event)"></app-category-list>
+    <div *ngIf="selectedCategory !== null">
+      <h1 style="color: dodgerblue">{{selectedCategory.CategoryName}}</h1>
+      <app-product-list [categoryId]="selectedCategory.CategoryId" [filterArgs]="filterArgs"></app-product-list>
+    </div>
+    <!--<div *ngFor="let category of categories">-->
+    <!--<h2>OLD: {{category.CategoryName}}</h2>-->
+    <!--<app-product-list [categoryId]="category.CategoryId"></app-product-list>-->
+    <!--</div>-->
+  </div>
 </div>
