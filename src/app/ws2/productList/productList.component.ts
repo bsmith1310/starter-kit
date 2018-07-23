@@ -27,7 +27,6 @@ import {
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() categoryId: any;
   @Input() filterArgs: '';
   @Input() products: Array<any>;
 

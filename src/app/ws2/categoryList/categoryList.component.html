@@ -2,6 +2,12 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div id="navbar-menu">
       <div class="navbar-nav">
+        <div>
+          <a class="nav-item nav-link" [class.selected]="isSelected(null)" (click)="selectCategory(null)">
+            <i class="fas fa-window-maximize"></i>
+            <span translate>All</span>
+          </a>
+        </div>
         <div *ngFor="let category of categories">
           <a class="nav-item nav-link" [class.selected]="isSelected(category)" (click)="selectCategory(category)">
             <i class="fas fa-window-maximize"></i>

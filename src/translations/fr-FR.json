@@ -1,7 +1,8 @@
 {
   "APP_NAME": "ngX-Rocket",
   "About": "A propos",
-  "Categories": "FR:Categories",
+  "AllProducts": "Tous les produits",
+  "Categories": "Categories",
   "Hello world !": "Bonjour le monde !",
   "Home": "Accueil",
   "Logged in as": "Connecté en tant que",

@@ -11,3 +11,13 @@
 .selected {
   color: dodgerblue !important;
 }
+
+a {
+  border: solid 1px gray;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+a:hover {
+  border: solid 1px dodgerblue;
+}
