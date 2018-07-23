@@ -10,11 +10,10 @@ import { finalize } from 'rxjs/operators';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input()
-  categoryId: any;
+  @Input() categoryId: any;
+  @Input() filterArgs: '';
 
   isLoading: boolean;
-
   result: any;
   products: Array<any>;
 
@@ -22,7 +21,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.productService.getProductsByCategory({categoryId: this.categoryId})
+    this.productService.getAllProducts({categoryId: this.categoryId})
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((res: any) => { this.result = res; this.products = res.Search.Products; });
   }

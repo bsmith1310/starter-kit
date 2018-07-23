@@ -26,4 +26,7 @@ export class CategoryListComponent implements OnInit {
     this.onSelectedCategory.emit(category);
   }
 
+  isSelected(category: any): boolean {
+    return this.selectedCategory === category;
+  }
 }

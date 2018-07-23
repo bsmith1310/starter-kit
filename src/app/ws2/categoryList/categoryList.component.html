@@ -7,7 +7,7 @@
     <div id="navbar-menu" class="collapse navbar-collapse float-xs-none">
       <div class="navbar-nav">
         <div *ngFor="let category of categories">
-          <a class="nav-item nav-link text-lowercase" (click)="selectCategory(category)">
+          <a class="nav-item nav-link" [class.selected]="isSelected(category)" (click)="selectCategory(category)">
             <i class="fas fa-window-maximize"></i>
             <span translate>{{category.CategoryName}}</span>
           </a>

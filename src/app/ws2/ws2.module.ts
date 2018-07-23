@@ -9,6 +9,8 @@ import { CategoryListComponent } from './categoryList/categoryList.component';
 import { ProductGridTileComponent } from './productList/productGridTile/productGridTile.component';
 import { ProductListComponent } from './productList/productList.component';
 
+import { MyFilterPipe } from './productList/MyFilterPipe';
+
 import { HeaderItemsService } from './headerItems.service';
 import { ProductService } from './productList/product.service';
 
@@ -21,6 +23,7 @@ import { ProductService } from './productList/product.service';
   declarations: [
     Ws2Component,
     CategoryListComponent,
+    MyFilterPipe,
     ProductGridTileComponent,
     ProductListComponent
   ],

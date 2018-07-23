@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
+import { environment } from '@env/environment';
+
 const routes = {
   productsByCategoryId: (c: Context) => `/search/fulltextsearch`
 };
@@ -17,21 +19,21 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProductsByCategory(context: Context): Observable<any> {
+  getAllProducts(context: Context): Observable<any> {
     const data = {
       // Category: 'Nuts',
-      CategoryId: context.categoryId,
+      // CategoryId: context.categoryId,
       // Keyword: null,
       // InnerSearchKeywords: null,
       // FacetValue: null,
       // SearchTerm: null,
       // FacetGroup: null,
       PageNumber: 1,
-      PageSize: 100,
+      PageSize: 1000,
       RefineBy: {},
       Sort: 0,
       LocaleId: 1,
-      CatalogId: 3,
+      CatalogId: environment.storeSettings.catelogId,
       ProfileId: 1,
       IsRemove: false,
       IsRemoveAll: false,
