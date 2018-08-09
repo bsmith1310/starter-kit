@@ -23,5 +23,6 @@ export const environment = {
   ],
   storeSettings: {
     catelogId: 3
-  }
+  },
+  znodeUserId: 2
 };

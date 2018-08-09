@@ -16,11 +16,17 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
       baseUrl = environment.serverUrl;
     } else if (this.isWebStoreResource(request.url)) {
       baseUrl = environment.znodeWebStoreApiUrl;
+    } else if (this.isAdminResource(request.url)) {
+      baseUrl = environment.znodeAdminUrl;
     } else {
       baseUrl = environment.znodeApiUrl;
     }
     request = request.clone({ url: baseUrl + request.url });
     return next.handle(request);
+  }
+
+  isAdminResource(url: string): boolean {
+    return url.indexOf(environment.znodeAdminApiResourcePrefix) > -1;
   }
 
   isWebStoreResource(url: string): boolean {

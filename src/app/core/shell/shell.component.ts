@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-shell',
@@ -9,7 +10,7 @@ export class ShellComponent implements OnInit {
 
   menu: any;
 
-  constructor() {
+  constructor(private router: Router) {
     this.menu = {
       items: [
         {
@@ -29,13 +30,13 @@ export class ShellComponent implements OnInit {
         },
         {
           link: 'ws4',
-          name: 'ws4',
-          description: ''
+          name: 'ws4(filtering)',
+          description: 'A space to test how many products could realistically be cached in browser and filtered by *ngFor directive.'
         },
         {
           link: 'ws5',
-          name: 'ws5',
-          description: ''
+          name: 'ws5(orders)',
+          description: 'Interacting with order data from Admin.'
         },
         {
           link: 'ws6',

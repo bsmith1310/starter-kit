@@ -11,6 +11,8 @@ export const environment = {
   version: env.npm_package_version + '-dev',
   serverUrl: '/api',
   znodeApiUrl: 'http://localhost:44762',
+  znodeAdminUrl: 'http://localhost:6766',
+  znodeAdminApiResourcePrefix: '/angularadminpoc/',
   znodeWebStoreApiUrl: 'http://localhost:3288',
   znodeWebStoreApiResources: [ // all resources fetched from Znode are assumed to be on API (ex: 44762),
                                // unless on this list and assumed to be on WebStore (ex: 3288)
@@ -28,5 +30,6 @@ export const environment = {
   ],
   storeSettings: {
     catelogId: 3
-  }
+  },
+  znodeUserId: 2
 };
